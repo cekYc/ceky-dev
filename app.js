@@ -500,10 +500,18 @@ document.addEventListener("DOMContentLoaded", () => {
   setupRoleButtons();
   setupFilterPills();
   setupSearchInput();
-  setupTerminal();
   setupModalEvents();
   setupPrintCV();
 });
+
+// Select Role and Smoothly Scroll to Projects
+function selectRoleAndScroll(roleKey) {
+  setRole(roleKey);
+  const projectsSection = document.getElementById("projects");
+  if (projectsSection) {
+    projectsSection.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}
 
 // Switch Role Action
 function setRole(roleKey) {
@@ -521,12 +529,21 @@ function setRole(roleKey) {
     dynamicRoleEl.textContent = departmentPitches[roleKey].roleName;
   }
 
+  // Update heading in projects section
+  const projectsHeading = document.getElementById("projects-section-heading");
+  if (projectsHeading) {
+    const roleLabels = {
+      backend: "⚙️ Backend Geliştirme Projeleri",
+      fullstack: "🌐 Full-Stack Web Projeleri",
+      systems: "🦀 Sistem & Düşük Seviye Projeleri",
+      it: "🖥️ Bilgi İşlem & Altyapı Projeleri"
+    };
+    projectsHeading.textContent = roleLabels[roleKey] || "Projeler";
+  }
+
   // Update Summary Card & Projects
   renderDepartmentSummary(roleKey);
   renderProjects();
-
-  // Log in terminal
-  logTerminalLine(`[SYSTEM] Aktif departman görünümü değiştirildi: ${roleKey.toUpperCase()}`, "text-cyan");
 }
 
 function setupRoleButtons() {
@@ -611,7 +628,7 @@ function renderProjects() {
   }
 
   if (countDesc) {
-    countDesc.textContent = `${filtered.length} proje gösteriliyor (${currentRole.toUpperCase()} odaklı)`;
+    countDesc.textContent = `${filtered.length} proje listeleniyor (${currentRole.toUpperCase()} odaklı)`;
   }
 
   if (filtered.length === 0) {
@@ -757,139 +774,7 @@ function setupModalEvents() {
   });
 }
 
-// --- 6. Interactive Developer Terminal (CLI) ---
-function setupTerminal() {
-  const input = document.getElementById("terminal-input");
-  if (!input) return;
-
-  input.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") {
-      const cmd = input.value.trim();
-      input.value = "";
-      if (cmd) executeTermCommand(cmd);
-    }
-  });
-}
-
-function executeTermCommand(cmdLine) {
-  const output = document.getElementById("terminal-output");
-  if (!output) return;
-
-  logTerminalLine(`eray@devbox:~$ ${cmdLine}`, "text-white");
-  const parts = cmdLine.toLowerCase().trim().split(/\s+/);
-  const mainCmd = parts[0];
-  const arg = parts[1];
-
-  switch (mainCmd) {
-    case "help":
-      logTerminalLine("Kullanılabilir Komutlar:", "text-cyan");
-      logTerminalLine("  backend      - Backend Developer görünümüne geç");
-      logTerminalLine("  fullstack    - Full-Stack Developer görünümüne geç");
-      logTerminalLine("  systems      - Systems / Low-Level görünümüne geç");
-      logTerminalLine("  it           - Bilgi İşlem / Altyapı görünümüne geç");
-      logTerminalLine("  cat <repo>   - Repo mimarisini terminalde göster (örn: cat elocode)");
-      logTerminalLine("  ls / repos   - Tüm 48 depoyu listele");
-      logTerminalLine("  stats        - Profil metriklerini göster");
-      logTerminalLine("  skills       - Yetenek matrisini listele");
-      logTerminalLine("  contact      - İletişim bilgilerini getir");
-      logTerminalLine("  clear        - Konsolu temizle");
-      break;
-
-    case "backend":
-      setRole("backend");
-      logTerminalLine("✓ Backend Developer görünümüne geçildi.", "text-emerald");
-      break;
-
-    case "fullstack":
-      setRole("fullstack");
-      logTerminalLine("✓ Full-Stack Developer görünümüne geçildi.", "text-emerald");
-      break;
-
-    case "systems":
-      setRole("systems");
-      logTerminalLine("✓ Systems Developer görünümüne geçildi.", "text-emerald");
-      break;
-
-    case "it":
-      setRole("it");
-      logTerminalLine("✓ Bilgi İşlem & Altyapı görünümüne geçildi.", "text-emerald");
-      break;
-
-    case "cat":
-      if (!arg) {
-        logTerminalLine("Kullanım: cat <repo-adi> (örn: cat elocode, cat crm, cat deadly_sins, cat ceky-lang)", "text-rose");
-      } else {
-        const found = projectsData.find(p => p.id.includes(arg) || p.name.toLowerCase().includes(arg));
-        if (found && found.caseStudy) {
-          logTerminalLine(`=== [${found.name}] MIMARI VAKA ANALIZI ===`, "text-cyan");
-          logTerminalLine(`Tagline: ${found.caseStudy.tagline}`);
-          logTerminalLine(`Problem: ${found.caseStudy.problem}`);
-          logTerminalLine(`Çözüm:   ${found.caseStudy.solution}`);
-          logTerminalLine(`Teknolojiler: ${found.tags.join(", ")}`);
-        } else if (found) {
-          logTerminalLine(`[${found.name}] (${found.language}): ${found.description}`);
-          logTerminalLine(`GitHub: ${found.githubUrl}`);
-        } else {
-          logTerminalLine(`Hata: '${arg}' isimli proje bulunamadı.`, "text-rose");
-        }
-      }
-      break;
-
-    case "ls":
-    case "repos":
-      logTerminalLine("=== TÜM DEPOLAR & MIMARILER (Özet) ===", "text-cyan");
-      projectsData.forEach(p => {
-        logTerminalLine(`- ${p.name.padEnd(24)} [${p.language.padEnd(12)}] ${p.isPrivate ? '🔒 Private' : '🌐 Public'} : ${p.title}`);
-      });
-      break;
-
-    case "stats":
-      logTerminalLine("=== PROFIL ISTATISTIKLERI ===", "text-cyan");
-      logTerminalLine("Toplam Depo: 48 (39 Public, 9 Private)");
-      logTerminalLine("Özgün Kod Oranı: %98");
-      logTerminalLine("README Dokümantasyon Oranı: %96");
-      logTerminalLine("Diller: TypeScript, Rust, Python, Go, Kotlin, C (C11), C++, Assembly");
-      break;
-
-    case "skills":
-      logTerminalLine("=== TEMEL YETENEKLER ===", "text-cyan");
-      logTerminalLine("Sistemler: Rust, Vulkan API, C (C11), AST Compilers, P2P Mesh");
-      logTerminalLine("Backend:   Go (pgx), NestJS, Supabase Postgres (RLS), Redis Streams");
-      logTerminalLine("Frontend:  Next.js App Router, Angular 17 Standalone, Three.js");
-      logTerminalLine("IT/Saha:   AIOps Radar v5, Windows Win32 API, Offline Android, Docker");
-      break;
-
-    case "contact":
-    case "hire":
-      logTerminalLine("=== ILETISIM BILGILERI ===", "text-emerald");
-      logTerminalLine("E-Posta: cekyy@example.com");
-      logTerminalLine("GitHub:  https://github.com/cekYc");
-      logTerminalLine("Durum:   Açık Pozisyonlar: Backend / Systems / Full-Stack / IT (EU & TR)");
-      break;
-
-    case "clear":
-      output.innerHTML = "";
-      return;
-
-    default:
-      logTerminalLine(`Komut bulunamadı: '${mainCmd}'. Komut listesi için 'help' yazın.`, "text-rose");
-      break;
-  }
-
-  output.scrollTop = output.scrollHeight;
-}
-
-function logTerminalLine(text, colorClass = "") {
-  const output = document.getElementById("terminal-output");
-  if (!output) return;
-  const line = document.createElement("div");
-  line.className = `terminal-line ${colorClass}`;
-  line.textContent = text;
-  output.appendChild(line);
-  output.scrollTop = output.scrollHeight;
-}
-
-// --- 7. Print CV Engine ---
+// --- 6. Print CV Engine ---
 function setupPrintCV() {
   const btn = document.getElementById("print-cv-btn");
   if (btn) {

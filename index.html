@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Background Glow & Grid -->
+  <!-- Background Atmosphere -->
   <div class="bg-grid"></div>
   <div class="glow-sphere glow-1"></div>
   <div class="glow-sphere glow-2"></div>
@@ -19,27 +19,27 @@
   <!-- Navigation Bar -->
   <header class="navbar">
     <div class="nav-container">
-      <div class="brand">
-        <span class="terminal-prompt">&gt;</span>
+      <a href="#" class="brand">
+        <span class="brand-accent">/</span>
         <span class="brand-name">cekYc</span>
-        <span class="brand-tag">/ dev-hub</span>
-      </div>
+        <span class="brand-tag">dev-hub</span>
+      </a>
 
       <nav class="nav-links">
         <a href="#departments" class="nav-link">Departmanlar</a>
-        <a href="#projects" class="nav-link">Projeler</a>
-        <a href="#terminal" class="nav-link">Terminal</a>
+        <a href="#featured" class="nav-link">Öne Çıkan Mimariler</a>
+        <a href="#projects" class="nav-link">Tüm Projeler</a>
         <a href="#skills" class="nav-link">Yetenekler</a>
         <a href="#contact" class="nav-link">İletişim</a>
       </nav>
 
       <div class="nav-actions">
         <button id="print-cv-btn" class="btn btn-outline btn-sm">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
           CV / Yazdır
         </button>
         <a href="https://github.com/cekYc" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
           GitHub (cekYc)
         </a>
       </div>
@@ -60,13 +60,13 @@
       </h1>
 
       <p class="hero-subtitle">
-        Düşük seviye sistem programlamadan (Rust/Vulkan/C) kurumsal dağıtık mikroservis mimarilerine (Go/PostgreSQL/Redis), modern web uygulamalarından (Next.js/Angular) bilgi işlem & altyapı otomasyonuna uzanan uçtan uca mühendislik portfolyosu.
+        Düşük seviye sistem programlamadan (Rust/Vulkan/C) kurumsal dağıtık mikroservis mimarilerine (Go/PostgreSQL/Redis), modern web uygulamalarından (Next.js/Angular) bilgi işlem & altyapı otomasyonuna uzanan mühendislik portfolyosu.
       </p>
 
-      <!-- Quick Metrics Ribbon -->
+      <!-- Quick Stats Ribbon -->
       <div class="stats-ribbon">
         <div class="stat-card">
-          <span class="stat-num" id="stat-total-repos">48</span>
+          <span class="stat-num">48</span>
           <span class="stat-label">Toplam Depo</span>
         </div>
         <div class="stat-card">
@@ -85,72 +85,168 @@
     </div>
   </section>
 
-  <!-- Department Persona Switcher (Core Feature) -->
+  <!-- Department Selection & Fast Navigation -->
   <section id="departments" class="departments-section">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Departman / Başvuru Rolünü Seçin</h2>
-        <p class="section-desc">Başvurulan departmana özel teknik odağı, ilgili kamuya açık ve özel mimarileri tek tıkla filtreleyin.</p>
+        <h2 class="section-title">Departman / Rol Seçimi</h2>
+        <p class="section-desc">Aşağıdaki butonlara tıklayarak doğrudan ilgilendiğiniz departmanın projelerine ve mimari detaylarına ulaşın.</p>
       </div>
 
       <div class="role-selector-grid">
-        <button class="role-card active" data-role="backend">
-          <div class="role-icon">⚙️</div>
-          <div class="role-info">
-            <h3 class="role-name">Backend Developer</h3>
-            <p class="role-tagline">Go, NestJS, Supabase/Postgres, Redis, Microservices, ACID & Auth</p>
+        <!-- 1. Backend -->
+        <div class="role-card active" data-role="backend">
+          <div class="role-card-header">
+            <span class="role-icon">⚙️</span>
+            <span class="role-badge">4 Özel Mimari + 6 Public</span>
           </div>
-          <div class="role-badge">4 Özel Mimari + 6 Public</div>
-        </button>
+          <h3 class="role-name">Backend Developer</h3>
+          <p class="role-tagline">Go, NestJS, Supabase/PostgreSQL, Redis Streams, ACID & Microservices</p>
+          <button class="btn btn-dept-action btn-sm" onclick="selectRoleAndScroll('backend')">
+            <span>Projeleri İncele</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
 
-        <button class="role-card" data-role="fullstack">
-          <div class="role-icon">🌐</div>
-          <div class="role-info">
-            <h3 class="role-name">Full-Stack Developer</h3>
-            <p class="role-tagline">Next.js App Router, Angular 17, WebSockets, Supabase, Cloudflare</p>
+        <!-- 2. Full-Stack -->
+        <div class="role-card" data-role="fullstack">
+          <div class="role-card-header">
+            <span class="role-icon">🌐</span>
+            <span class="role-badge">5 Özel Mimari + 8 Public</span>
           </div>
-          <div class="role-badge">5 Özel Mimari + 8 Public</div>
-        </button>
+          <h3 class="role-name">Full-Stack Developer</h3>
+          <p class="role-tagline">Next.js App Router, Angular 17 Standalone, Cloudflare Workers, Three.js</p>
+          <button class="btn btn-dept-action btn-sm" onclick="selectRoleAndScroll('fullstack')">
+            <span>Projeleri İncele</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
 
-        <button class="role-card" data-role="systems">
-          <div class="role-icon">🦀</div>
-          <div class="role-info">
-            <h3 class="role-name">Systems Developer</h3>
-            <p class="role-tagline">Rust, Vulkan Voxel Engine, Stage-0 Compilers, P2P Mesh, Pure C</p>
+        <!-- 3. Systems -->
+        <div class="role-card" data-role="systems">
+          <div class="role-card-header">
+            <span class="role-icon">🦀</span>
+            <span class="role-badge">2 Özel Mimari + 7 Public</span>
           </div>
-          <div class="role-badge">2 Özel Mimari + 7 Public</div>
-        </button>
+          <h3 class="role-name">Systems Developer</h3>
+          <p class="role-tagline">Rust, Vulkan Voxel Engine, Stage-0 Derleyicileri, P2P Mesh, Saf C</p>
+          <button class="btn btn-dept-action btn-sm" onclick="selectRoleAndScroll('systems')">
+            <span>Projeleri İncele</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
 
-        <button class="role-card" data-role="it">
-          <div class="role-icon">🖥️</div>
-          <div class="role-info">
-            <h3 class="role-name">Bilgi İşlem / IT & Altyapı</h3>
-            <p class="role-tagline">System Radar v5, RF/Wi-Fi sensing, Docker, Offline Android, UAC & Ağ</p>
+        <!-- 4. IT & Infrastructure -->
+        <div class="role-card" data-role="it">
+          <div class="role-card-header">
+            <span class="role-icon">🖥️</span>
+            <span class="role-badge">Saha & Altyapı Araçları</span>
           </div>
-          <div class="role-badge">Altyapı & Saha Araçları</div>
-        </button>
+          <h3 class="role-name">Bilgi İşlem / IT & Altyapı</h3>
+          <p class="role-tagline">AIOps System Radar v5, RF/Wi-Fi Sinyal Analizi, Docker, Çevrimdışı Android</p>
+          <button class="btn btn-dept-action btn-sm" onclick="selectRoleAndScroll('it')">
+            <span>Projeleri İncele</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
       </div>
 
-      <!-- Department Pitch Card (Dynamic) -->
+      <!-- Dynamic Department Overview Card -->
       <div class="dept-summary-card" id="dept-summary-container">
-        <!-- Injected via JavaScript based on active role -->
+        <!-- Injected via JavaScript based on selected role -->
       </div>
     </div>
   </section>
 
-  <!-- Projects Explorer Section -->
+  <!-- Featured Flagship Architectures (Direct 1-Click Blueprints) -->
+  <section id="featured" class="featured-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">🏆 Öne Çıkan Mimari Vaka Analizleri (Case Studies)</h2>
+        <p class="section-desc">Gizlilik standartlarına uygun olarak kodları ifşa edilmeksizin mimari tasarımı, veri akışı ve kazanımları belgelenen amiral projeler.</p>
+      </div>
+
+      <div class="featured-grid">
+        <!-- EloCode -->
+        <div class="featured-card">
+          <div class="featured-card-badge">🔒 Özel Mimari · Go & Rust</div>
+          <h3 class="featured-title">EloCode — Privacy-First Code Review Arena</h3>
+          <p class="featured-desc">Kurumsal kod tabanını sızdırmadan yerel AST maskeleme ile anonimleştiren, Go/pgx/v5 ile ACID transaction güvenceli rekabetçi hata ayıklama arenası.</p>
+          <div class="featured-tags">
+            <span class="tech-tag">Go 1.22</span>
+            <span class="tech-tag">Rust AST</span>
+            <span class="tech-tag">PostgreSQL (pgx/v5)</span>
+            <span class="tech-tag">Redis Streams</span>
+          </div>
+          <button class="btn btn-cyan btn-sm" onclick="openCaseStudyModal('elocode')">
+            <span>📐 Mimari Şemayı & Vaka Analizini Aç</span>
+          </button>
+        </div>
+
+        <!-- Project M Voxel Engine -->
+        <div class="featured-card">
+          <div class="featured-card-badge">🔒 Özel Mimari · Rust & Vulkan</div>
+          <h3 class="featured-title">Project M — Vulkan Voxel & Simülasyon Motoru</h3>
+          <p class="featured-desc">Rust ve Vulkan API ile sıfırdan geliştirilen; özel bellek havuzları, termodinamik/otomasyon hesaplamaları ve Rayon asenkron chunk örme yeteneğine sahip voxel motoru.</p>
+          <div class="featured-tags">
+            <span class="tech-tag">Rust</span>
+            <span class="tech-tag">Vulkan API</span>
+            <span class="tech-tag">Rayon Meshing</span>
+            <span class="tech-tag">GPU Memory Pools</span>
+          </div>
+          <button class="btn btn-cyan btn-sm" onclick="openCaseStudyModal('deadly-sins-engine')">
+            <span>📐 Mimari Şemayı & Vaka Analizini Aç</span>
+          </button>
+        </div>
+
+        <!-- Ceky Lang Compiler -->
+        <div class="featured-card">
+          <div class="featured-card-badge">🔒 Özel Mimari · Rust Compiler</div>
+          <h3 class="featured-title">Ceky-Lang — Stage-0 Sistem Dili Derleyicisi</h3>
+          <p class="featured-desc">Kaynak koddan doğrudan optimize C11 çıktısı ve yerel ikili dosya üreten; Tokenizer, AST, Name Resolution, Typed HIR ve CFG MIR pipeline aşamalarını içeren derleyici.</p>
+          <div class="featured-tags">
+            <span class="tech-tag">Rust</span>
+            <span class="tech-tag">AST / HIR / MIR</span>
+            <span class="tech-tag">C11 CodeGen</span>
+            <span class="tech-tag">Self-Hosting</span>
+          </div>
+          <button class="btn btn-cyan btn-sm" onclick="openCaseStudyModal('ceky-lang')">
+            <span>📐 Mimari Şemayı & Vaka Analizini Aç</span>
+          </button>
+        </div>
+
+        <!-- Lead Guard CRM -->
+        <div class="featured-card">
+          <div class="featured-card-badge">🔒 Özel Mimari · Full-Stack SaaS</div>
+          <h3 class="featured-title">Lead Guard CRM — Transaction-Safe Dağıtım</h3>
+          <p class="featured-desc">Postgres PL/pgSQL fonksiyonları ile transaction-safe round-robin lead dağıtımı, Supabase RLS danışman izolasyonu ve Cloudflare Workers dağıtımı.</p>
+          <div class="featured-tags">
+            <span class="tech-tag">Next.js App Router</span>
+            <span class="tech-tag">Supabase RLS</span>
+            <span class="tech-tag">Cloudflare Workers</span>
+            <span class="tech-tag">n8n SLA</span>
+          </div>
+          <button class="btn btn-cyan btn-sm" onclick="openCaseStudyModal('crm-lead')">
+            <span>📐 Mimari Şemayı & Vaka Analizini Aç</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Complete Projects Section with Direct Role Filters -->
   <section id="projects" class="projects-section">
     <div class="container">
       <div class="section-header-flex">
         <div>
-          <h2 class="section-title">İlgili Projeler & Mimariler</h2>
+          <h2 class="section-title" id="projects-section-heading">Projeler</h2>
           <p class="section-desc" id="projects-count-desc">Seçili departman için optimize edilmiş projeler listeleniyor.</p>
         </div>
 
-        <!-- Filter & Search Controls -->
+        <!-- Filter Controls -->
         <div class="filter-controls">
           <div class="search-box">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
             <input type="text" id="project-search" placeholder="Proje, dil veya teknoloji ara...">
           </div>
 
@@ -169,48 +265,7 @@
     </div>
   </section>
 
-  <!-- Interactive Terminal Section -->
-  <section id="terminal" class="terminal-section">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">İnteraktif Geliştirici Konsolu (CLI)</h2>
-        <p class="section-desc">Profilimi doğrudan komut satırından keşfedin. İpucu: <code class="code-inline">help</code> veya <code class="code-inline">cat elocode</code> yazın.</p>
-      </div>
-
-      <div class="terminal-window">
-        <div class="terminal-header">
-          <div class="terminal-buttons">
-            <span class="btn-dot dot-red"></span>
-            <span class="btn-dot dot-yellow"></span>
-            <span class="btn-dot dot-green"></span>
-          </div>
-          <div class="terminal-title">eray@ceky-devbox:~ (bash)</div>
-          <div class="terminal-status">ONLINE</div>
-        </div>
-        <div class="terminal-body" id="terminal-output">
-          <div class="terminal-line text-muted">Ceky Developer Shell v2.4.0 (x86_64-pc-windows-msvc)</div>
-          <div class="terminal-line text-muted">Kullanılabilir komutları listelemek için '<span class="text-cyan">help</span>' yazın veya aşağıdaki kısayollara tıklayın.</div>
-          <div class="terminal-quick-actions">
-            <button class="term-btn" onclick="executeTermCommand('help')">help</button>
-            <button class="term-btn" onclick="executeTermCommand('backend')">backend</button>
-            <button class="term-btn" onclick="executeTermCommand('systems')">systems</button>
-            <button class="term-btn" onclick="executeTermCommand('fullstack')">fullstack</button>
-            <button class="term-btn" onclick="executeTermCommand('it')">it</button>
-            <button class="term-btn" onclick="executeTermCommand('cat elocode')">cat elocode</button>
-            <button class="term-btn" onclick="executeTermCommand('cat deadly_sins')">cat deadly_sins</button>
-            <button class="term-btn" onclick="executeTermCommand('stats')">stats</button>
-            <button class="term-btn" onclick="executeTermCommand('clear')">clear</button>
-          </div>
-        </div>
-        <div class="terminal-input-row">
-          <span class="terminal-prompt">eray@devbox:~$</span>
-          <input type="text" id="terminal-input" placeholder="Komut girin..." autocomplete="off" spellcheck="false">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Skills & Competencies Radar -->
+  <!-- Skills Matrix -->
   <section id="skills" class="skills-section">
     <div class="container">
       <div class="section-header">
@@ -268,7 +323,7 @@
             <h3>Bilgi İşlem, Altyapı & Mobil</h3>
           </div>
           <ul class="skill-list">
-            <li><strong>Sistem & Donanım:</strong> AIOps System Radar, VRAM/CPU Optimizasyonu, UAC Entegrasyonu</li>
+            <li><strong>Sistem & Donanım:</strong> AIOps System Radar v5, VRAM/CPU Optimizasyonu, UAC Entegrasyonu</li>
             <li><strong>Konteynerizasyon:</strong> Docker, Docker Compose, Çok Servisli Orkestrasyon</li>
             <li><strong>Mobil & Edge:</strong> Android (Kotlin) - %100 Çevrimdışı STT & Fabrika Operasyon Takip</li>
             <li><strong>Saha & Ağ Teşhisi:</strong> Wi-Fi RF Haritalama, Modem Ölçüm Analizi, Yedekleme Stratejileri</li>
@@ -288,20 +343,20 @@
           
           <div class="contact-methods">
             <a href="mailto:cekyy@example.com" class="contact-item">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              <span>E-Posta İle İletişime Geç</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span>cekyy@example.com</span>
             </a>
             <a href="https://github.com/cekYc" target="_blank" rel="noopener noreferrer" class="contact-item">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
               <span>github.com/cekYc</span>
             </a>
           </div>
         </div>
 
         <div class="footer-cta">
-          <button class="btn btn-primary btn-lg" onclick="executeTermCommand('contact'); document.getElementById('terminal').scrollIntoView({behavior:'smooth'});">
-            ⚡ Konsolu Başlat & Mesaj Gönder
-          </button>
+          <a href="mailto:cekyy@example.com?subject=Gorusme%20Talebi%20-%20Mühendislik%20Pozisyonu" class="btn btn-primary btn-lg">
+            ✉️ Görüşme & Mülakat Başlat
+          </a>
         </div>
       </div>
 
