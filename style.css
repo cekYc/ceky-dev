@@ -232,19 +232,20 @@ body {
 
 .nav-links {
   display: flex;
-  gap: 24px;
+  gap: 20px;
 }
 
 .nav-link {
   color: var(--text-secondary);
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 500;
   transition: color 0.2s ease;
+  cursor: pointer;
 }
 
 .nav-link:hover {
-  color: var(--text-primary);
+  color: var(--accent-cyan);
 }
 
 .nav-actions {
@@ -357,15 +358,15 @@ body {
 }
 
 /* ==========================================================================
-   Department Selection & Fast Navigation
+   Selector Bar
    ========================================================================== */
-.departments-section {
-  padding: 40px 0 20px;
+.selector-section {
+  padding: 30px 0 20px;
 }
 
 .section-header {
   text-align: center;
-  margin-bottom: 32px;
+  margin-bottom: 28px;
 }
 
 .section-title {
@@ -386,18 +387,19 @@ body {
 .role-selector-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
-  margin-bottom: 24px;
+  gap: 16px;
 }
 
 .role-card {
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
-  padding: 22px 18px;
+  padding: 20px 16px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
+  text-align: left;
+  cursor: pointer;
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
@@ -410,7 +412,7 @@ body {
 }
 
 .role-card.active {
-  background: linear-gradient(180deg, rgba(37, 99, 235, 0.14) 0%, var(--bg-card) 100%);
+  background: linear-gradient(180deg, rgba(37, 99, 235, 0.16) 0%, var(--bg-card) 100%);
   border-color: var(--accent-blue);
   box-shadow: 0 0 25px -5px rgba(37, 99, 235, 0.35);
 }
@@ -432,7 +434,7 @@ body {
 }
 
 .role-icon {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
 }
 
 .role-badge {
@@ -445,40 +447,108 @@ body {
 }
 
 .role-name {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: #ffffff;
 }
 
 .role-tagline {
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   color: var(--text-muted);
   line-height: 1.4;
   flex-grow: 1;
 }
 
-.btn-dept-action {
-  background: rgba(56, 189, 248, 0.1);
-  border: 1px solid rgba(56, 189, 248, 0.25);
-  color: var(--accent-blue);
+.role-indicator {
+  display: flex;
+  align-items: center;
   justify-content: space-between;
-  width: 100%;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent-blue);
   margin-top: 4px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.btn-dept-action:hover {
-  background: var(--accent-blue);
+/* ==========================================================================
+   Unified Showcase Stream Section (Akış Odaklı Bölüm)
+   ========================================================================== */
+.showcase-stream-section {
+  padding: 50px 0 60px;
+  scroll-margin-top: 80px;
+}
+
+.stream-block {
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.stream-header-block {
+  margin-bottom: 24px;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.stream-role-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 9999px;
+  color: var(--accent-cyan);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  margin-bottom: 12px;
+}
+
+.stream-main-title {
+  font-size: 2.1rem;
+  font-weight: 800;
   color: #ffffff;
-  border-color: var(--accent-blue);
+  letter-spacing: -0.5px;
 }
 
-/* Dynamic Department Pitch Card */
+.stream-sub-header {
+  margin-bottom: 24px;
+}
+
+.stream-step-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--accent-purple);
+  background: rgba(168, 85, 247, 0.12);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.stream-sub-title {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.stream-sub-desc {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+}
+
+/* Dynamic Department Competency Pitch Card */
 .dept-summary-card {
   background: linear-gradient(135deg, rgba(21, 27, 43, 0.95), rgba(17, 22, 34, 0.95));
-  border: 1px solid rgba(56, 189, 248, 0.3);
+  border: 1px solid rgba(56, 189, 248, 0.35);
   border-radius: var(--radius-lg);
-  padding: 26px 30px;
+  padding: 28px 32px;
   box-shadow: var(--shadow-card);
+  margin-bottom: 40px;
   animation: fadeIn 0.3s ease-out;
 }
 
@@ -497,7 +567,7 @@ body {
 }
 
 .dept-pitch-title {
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   font-weight: 700;
   color: #ffffff;
   display: flex;
@@ -507,9 +577,9 @@ body {
 
 .dept-pitch-body {
   color: var(--text-secondary);
-  font-size: 0.95rem;
+  font-size: 0.98rem;
   line-height: 1.7;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 
 .dept-highlights {
@@ -538,13 +608,7 @@ body {
   color: var(--text-muted);
 }
 
-/* ==========================================================================
-   Featured Flagship Architectures (Case Studies)
-   ========================================================================== */
-.featured-section {
-  padding: 40px 0;
-}
-
+/* Featured Case Studies Grid (Inside Stream) */
 .featured-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -603,19 +667,15 @@ body {
 }
 
 /* ==========================================================================
-   Projects Section & Filter Bar
+   Projects Grid & Filters
    ========================================================================== */
-.projects-section {
-  padding: 40px 0 60px;
-}
-
 .section-header-flex {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
   flex-wrap: wrap;
-  gap: 18px;
+  gap: 16px;
 }
 
 .filter-controls {
@@ -634,7 +694,7 @@ body {
   border-radius: var(--radius-sm);
   padding: 8px 12px;
   color: var(--text-secondary);
-  width: 250px;
+  width: 240px;
   transition: all 0.2s ease;
 }
 
@@ -1067,6 +1127,7 @@ body {
 @media (max-width: 768px) {
   .nav-links { display: none; }
   .hero-title { font-size: 2.1rem; }
+  .stream-main-title { font-size: 1.65rem; }
   .role-selector-grid { grid-template-columns: 1fr; }
   .projects-grid { grid-template-columns: 1fr; }
   .skills-grid { grid-template-columns: 1fr; }
@@ -1081,18 +1142,18 @@ body {
     background: #ffffff !important;
     color: #111827 !important;
   }
-  .bg-grid, .glow-sphere, .navbar, .featured-section, .footer-cta, .filter-controls, .nav-actions, .pulse-dot {
+  .bg-grid, .glow-sphere, .navbar, .selector-section, .footer-cta, .filter-controls, .nav-actions, .pulse-dot {
     display: none !important;
   }
   .hero-title .text-white { color: #111827 !important; }
   .hero-subtitle, .section-desc, .project-desc, .skill-list li { color: #374151 !important; }
-  .project-card, .skill-card, .dept-summary-card, .stat-card {
+  .project-card, .skill-card, .dept-summary-card, .stat-card, .featured-card {
     background: #ffffff !important;
     border: 1px solid #e5e7eb !important;
     color: #111827 !important;
     break-inside: avoid;
     box-shadow: none !important;
   }
-  .project-title, .role-name, .skill-header h3, .stat-num { color: #111827 !important; }
+  .project-title, .role-name, .skill-header h3, .stat-num, .stream-main-title { color: #111827 !important; }
   .tech-tag { background: #f3f4f6 !important; color: #1f2937 !important; border-color: #e5e7eb !important; }
 }

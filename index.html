@@ -26,9 +26,10 @@
       </a>
 
       <nav class="nav-links">
-        <a href="#departments" class="nav-link">Departmanlar</a>
-        <a href="#featured" class="nav-link">Öne Çıkan Mimariler</a>
-        <a href="#projects" class="nav-link">Tüm Projeler</a>
+        <a href="#showcase" class="nav-link" onclick="setRoleAndScroll('backend')">⚙️ Backend</a>
+        <a href="#showcase" class="nav-link" onclick="setRoleAndScroll('fullstack')">🌐 Full-Stack</a>
+        <a href="#showcase" class="nav-link" onclick="setRoleAndScroll('systems')">🦀 Systems</a>
+        <a href="#showcase" class="nav-link" onclick="setRoleAndScroll('it')">🖥️ Bilgi İşlem</a>
         <a href="#skills" class="nav-link">Yetenekler</a>
         <a href="#contact" class="nav-link">İletişim</a>
       </nav>
@@ -56,11 +57,11 @@
 
       <h1 class="hero-title">
         <span class="text-white">Eray</span>
-        <span class="text-gradient" id="hero-dynamic-role">Backend & Systems Developer</span>
+        <span class="text-gradient">Mühendislik & Proje Portfolyosu</span>
       </h1>
 
       <p class="hero-subtitle">
-        Düşük seviye sistem programlamadan (Rust/Vulkan/C) kurumsal dağıtık mikroservis mimarilerine (Go/PostgreSQL/Redis), modern web uygulamalarından (Next.js/Angular) bilgi işlem & altyapı otomasyonuna uzanan mühendislik portfolyosu.
+        Düşük seviye sistem programlamadan (Rust/Vulkan/C) kurumsal mikroservis mimarilerine (Go/PostgreSQL/Redis), modern web uygulamalarından (Next.js/Angular) bilgi işlem & altyapı otomasyonuna uzanan uçtan uca mühendislik akışı.
       </p>
 
       <!-- Quick Stats Ribbon -->
@@ -85,183 +86,137 @@
     </div>
   </section>
 
-  <!-- Department Selection & Fast Navigation -->
-  <section id="departments" class="departments-section">
+  <!-- Department Selection Bar (Global Controller) -->
+  <section class="selector-section">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Departman / Rol Seçimi</h2>
-        <p class="section-desc">Aşağıdaki butonlara tıklayarak doğrudan ilgilendiğiniz departmanın projelerine ve mimari detaylarına ulaşın.</p>
+        <h2 class="section-title">İlgilendiğiniz Departmanı Seçin</h2>
+        <p class="section-desc">Seçtiğiniz departmanın yetkinlik özeti, amiral mimarileri ve ilgili tüm depoları kesintisiz bir akış halinde aşağıda açılır.</p>
       </div>
 
       <div class="role-selector-grid">
         <!-- 1. Backend -->
-        <div class="role-card active" data-role="backend">
+        <button class="role-card active" data-role="backend" onclick="setRoleAndScroll('backend')">
           <div class="role-card-header">
             <span class="role-icon">⚙️</span>
-            <span class="role-badge">4 Özel Mimari + 6 Public</span>
+            <span class="role-badge">4 Özel + 6 Public</span>
           </div>
           <h3 class="role-name">Backend Developer</h3>
-          <p class="role-tagline">Go, NestJS, Supabase/PostgreSQL, Redis Streams, ACID & Microservices</p>
-          <button class="btn btn-dept-action btn-sm" onclick="selectRoleAndScroll('backend')">
-            <span>Projeleri İncele</span>
+          <p class="role-tagline">Go, NestJS, Postgres ACID, Redis Streams & Microservices</p>
+          <div class="role-indicator">
+            <span>Akışı Görüntüle</span>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </button>
-        </div>
+          </div>
+        </button>
 
         <!-- 2. Full-Stack -->
-        <div class="role-card" data-role="fullstack">
+        <button class="role-card" data-role="fullstack" onclick="setRoleAndScroll('fullstack')">
           <div class="role-card-header">
             <span class="role-icon">🌐</span>
-            <span class="role-badge">5 Özel Mimari + 8 Public</span>
+            <span class="role-badge">5 Özel + 8 Public</span>
           </div>
           <h3 class="role-name">Full-Stack Developer</h3>
-          <p class="role-tagline">Next.js App Router, Angular 17 Standalone, Cloudflare Workers, Three.js</p>
-          <button class="btn btn-dept-action btn-sm" onclick="selectRoleAndScroll('fullstack')">
-            <span>Projeleri İncele</span>
+          <p class="role-tagline">Next.js App Router, Angular 17, Cloudflare Workers, Three.js</p>
+          <div class="role-indicator">
+            <span>Akışı Görüntüle</span>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </button>
-        </div>
+          </div>
+        </button>
 
         <!-- 3. Systems -->
-        <div class="role-card" data-role="systems">
+        <button class="role-card" data-role="systems" onclick="setRoleAndScroll('systems')">
           <div class="role-card-header">
             <span class="role-icon">🦀</span>
-            <span class="role-badge">2 Özel Mimari + 7 Public</span>
+            <span class="role-badge">2 Özel + 7 Public</span>
           </div>
           <h3 class="role-name">Systems Developer</h3>
-          <p class="role-tagline">Rust, Vulkan Voxel Engine, Stage-0 Derleyicileri, P2P Mesh, Saf C</p>
-          <button class="btn btn-dept-action btn-sm" onclick="selectRoleAndScroll('systems')">
-            <span>Projeleri İncele</span>
+          <p class="role-tagline">Rust, Vulkan Voxel Engine, Stage-0 Compilers, P2P Mesh, C</p>
+          <div class="role-indicator">
+            <span>Akışı Görüntüle</span>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </button>
-        </div>
+          </div>
+        </button>
 
         <!-- 4. IT & Infrastructure -->
-        <div class="role-card" data-role="it">
+        <button class="role-card" data-role="it" onclick="setRoleAndScroll('it')">
           <div class="role-card-header">
             <span class="role-icon">🖥️</span>
-            <span class="role-badge">Saha & Altyapı Araçları</span>
+            <span class="role-badge">Altyapı & Saha</span>
           </div>
           <h3 class="role-name">Bilgi İşlem / IT & Altyapı</h3>
-          <p class="role-tagline">AIOps System Radar v5, RF/Wi-Fi Sinyal Analizi, Docker, Çevrimdışı Android</p>
-          <button class="btn btn-dept-action btn-sm" onclick="selectRoleAndScroll('it')">
-            <span>Projeleri İncele</span>
+          <p class="role-tagline">AIOps Radar v5, RF/Wi-Fi Analizi, Docker, Çevrimdışı Android</p>
+          <div class="role-indicator">
+            <span>Akışı Görüntüle</span>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </button>
+          </div>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================================================================
+       UNIFIED DEPARTMENT SHOWCASE STREAM (Akış Odaklı Bölüm)
+       ======================================================================= -->
+  <section id="showcase" class="showcase-stream-section">
+    <div class="container">
+      
+      <!-- 1. AKIŞIN BAŞI: Departman Başlığı & Yetkinlik Kartı (Öncelikli Görüntülenir) -->
+      <div class="stream-block stream-header-block">
+        <div class="stream-role-pill" id="stream-role-pill">
+          <span class="pulse-dot"></span>
+          <span id="stream-role-title-badge">⚙️ Backend Developer Akışı</span>
         </div>
+        <h2 class="stream-main-title" id="stream-main-title">Backend & Dağıtık Sistemler Mühendisliği</h2>
       </div>
 
-      <!-- Dynamic Department Overview Card -->
+      <!-- Dinamik Yetkinlik Kartı -->
       <div class="dept-summary-card" id="dept-summary-container">
-        <!-- Injected via JavaScript based on selected role -->
-      </div>
-    </div>
-  </section>
-
-  <!-- Featured Flagship Architectures (Direct 1-Click Blueprints) -->
-  <section id="featured" class="featured-section">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">🏆 Öne Çıkan Mimari Vaka Analizleri (Case Studies)</h2>
-        <p class="section-desc">Gizlilik standartlarına uygun olarak kodları ifşa edilmeksizin mimari tasarımı, veri akışı ve kazanımları belgelenen amiral projeler.</p>
-      </div>
-
-      <div class="featured-grid">
-        <!-- EloCode -->
-        <div class="featured-card">
-          <div class="featured-card-badge">🔒 Özel Mimari · Go & Rust</div>
-          <h3 class="featured-title">EloCode — Privacy-First Code Review Arena</h3>
-          <p class="featured-desc">Kurumsal kod tabanını sızdırmadan yerel AST maskeleme ile anonimleştiren, Go/pgx/v5 ile ACID transaction güvenceli rekabetçi hata ayıklama arenası.</p>
-          <div class="featured-tags">
-            <span class="tech-tag">Go 1.22</span>
-            <span class="tech-tag">Rust AST</span>
-            <span class="tech-tag">PostgreSQL (pgx/v5)</span>
-            <span class="tech-tag">Redis Streams</span>
-          </div>
-          <button class="btn btn-cyan btn-sm" onclick="openCaseStudyModal('elocode')">
-            <span>📐 Mimari Şemayı & Vaka Analizini Aç</span>
-          </button>
-        </div>
-
-        <!-- Project M Voxel Engine -->
-        <div class="featured-card">
-          <div class="featured-card-badge">🔒 Özel Mimari · Rust & Vulkan</div>
-          <h3 class="featured-title">Project M — Vulkan Voxel & Simülasyon Motoru</h3>
-          <p class="featured-desc">Rust ve Vulkan API ile sıfırdan geliştirilen; özel bellek havuzları, termodinamik/otomasyon hesaplamaları ve Rayon asenkron chunk örme yeteneğine sahip voxel motoru.</p>
-          <div class="featured-tags">
-            <span class="tech-tag">Rust</span>
-            <span class="tech-tag">Vulkan API</span>
-            <span class="tech-tag">Rayon Meshing</span>
-            <span class="tech-tag">GPU Memory Pools</span>
-          </div>
-          <button class="btn btn-cyan btn-sm" onclick="openCaseStudyModal('deadly-sins-engine')">
-            <span>📐 Mimari Şemayı & Vaka Analizini Aç</span>
-          </button>
-        </div>
-
-        <!-- Ceky Lang Compiler -->
-        <div class="featured-card">
-          <div class="featured-card-badge">🔒 Özel Mimari · Rust Compiler</div>
-          <h3 class="featured-title">Ceky-Lang — Stage-0 Sistem Dili Derleyicisi</h3>
-          <p class="featured-desc">Kaynak koddan doğrudan optimize C11 çıktısı ve yerel ikili dosya üreten; Tokenizer, AST, Name Resolution, Typed HIR ve CFG MIR pipeline aşamalarını içeren derleyici.</p>
-          <div class="featured-tags">
-            <span class="tech-tag">Rust</span>
-            <span class="tech-tag">AST / HIR / MIR</span>
-            <span class="tech-tag">C11 CodeGen</span>
-            <span class="tech-tag">Self-Hosting</span>
-          </div>
-          <button class="btn btn-cyan btn-sm" onclick="openCaseStudyModal('ceky-lang')">
-            <span>📐 Mimari Şemayı & Vaka Analizini Aç</span>
-          </button>
-        </div>
-
-        <!-- Lead Guard CRM -->
-        <div class="featured-card">
-          <div class="featured-card-badge">🔒 Özel Mimari · Full-Stack SaaS</div>
-          <h3 class="featured-title">Lead Guard CRM — Transaction-Safe Dağıtım</h3>
-          <p class="featured-desc">Postgres PL/pgSQL fonksiyonları ile transaction-safe round-robin lead dağıtımı, Supabase RLS danışman izolasyonu ve Cloudflare Workers dağıtımı.</p>
-          <div class="featured-tags">
-            <span class="tech-tag">Next.js App Router</span>
-            <span class="tech-tag">Supabase RLS</span>
-            <span class="tech-tag">Cloudflare Workers</span>
-            <span class="tech-tag">n8n SLA</span>
-          </div>
-          <button class="btn btn-cyan btn-sm" onclick="openCaseStudyModal('crm-lead')">
-            <span>📐 Mimari Şemayı & Vaka Analizini Aç</span>
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Complete Projects Section with Direct Role Filters -->
-  <section id="projects" class="projects-section">
-    <div class="container">
-      <div class="section-header-flex">
-        <div>
-          <h2 class="section-title" id="projects-section-heading">Projeler</h2>
-          <p class="section-desc" id="projects-count-desc">Seçili departman için optimize edilmiş projeler listeleniyor.</p>
-        </div>
-
-        <!-- Filter Controls -->
-        <div class="filter-controls">
-          <div class="search-box">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-            <input type="text" id="project-search" placeholder="Proje, dil veya teknoloji ara...">
-          </div>
-
-          <div class="filter-pills">
-            <button class="filter-pill active" data-filter="all">Tümü</button>
-            <button class="filter-pill" data-filter="private">🔒 Özel (Case Study)</button>
-            <button class="filter-pill" data-filter="public">🌐 Açık Kaynak</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Projects Grid -->
-      <div class="projects-grid" id="projects-grid">
         <!-- Rendered dynamically by app.js -->
       </div>
+
+      <!-- 2. AKIŞIN DEVAMI: Öne Çıkan Amiral Mimariler (Case Studies) -->
+      <div class="stream-block">
+        <div class="stream-sub-header">
+          <div class="stream-step-badge">1. Adım</div>
+          <h3 class="stream-sub-title">🏆 Amiral Mimariler & Vaka Analizleri (Case Studies)</h3>
+          <p class="stream-sub-desc">Bu departman için tasarlanan gizlilik standartlarına uygun mimari şemalar ve veri akışları.</p>
+        </div>
+
+        <div class="featured-grid" id="dept-featured-grid">
+          <!-- Rendered dynamically by app.js based on selected role -->
+        </div>
+      </div>
+
+      <!-- 3. AKIŞIN DEVAMI: İlgili Tüm Projeler & Depolar -->
+      <div class="stream-block" style="border-bottom: none;">
+        <div class="section-header-flex">
+          <div>
+            <div class="stream-step-badge">2. Adım</div>
+            <h3 class="stream-sub-title" id="projects-section-heading">İlgili Tüm Kod Tabanları & Depolar</h3>
+            <p class="stream-sub-desc" id="projects-count-desc">Seçili departman için optimize edilmiş projeler listeleniyor.</p>
+          </div>
+
+          <!-- Filter Controls -->
+          <div class="filter-controls">
+            <div class="search-box">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+              <input type="text" id="project-search" placeholder="Proje, dil veya teknoloji ara...">
+            </div>
+
+            <div class="filter-pills">
+              <button class="filter-pill active" data-filter="all">Tümü</button>
+              <button class="filter-pill" data-filter="private">🔒 Özel</button>
+              <button class="filter-pill" data-filter="public">🌐 Açık Kaynak</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid" id="projects-grid">
+          <!-- Rendered dynamically by app.js -->
+        </div>
+      </div>
+
     </div>
   </section>
 

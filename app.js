@@ -1,6 +1,6 @@
 /**
  * Eray (cekYc) - Developer Hub & Portfolio Engine
- * Multi-Department Project Showcase & Architecture Explorer
+ * Multi-Department Project Showcase & Architecture Explorer (Continuous Stream Flow)
  */
 
 // --- 1. Rich Projects Data Model ---
@@ -443,48 +443,56 @@ const projectsData = [
 // --- 2. Department Pitches Data ---
 const departmentPitches = {
   backend: {
-    title: "⚙️ Backend Developer Yetkinlikleri",
-    roleName: "Backend & Distributed Systems Engineer",
+    pillBadge: "⚙️ Backend Developer Akışı",
+    streamTitle: "Backend & Dağıtık Sistemler Mühendisliği",
+    title: "⚙️ Backend Developer Yetkinlik & Mimari Özeti",
     tagline: "Yüksek hacimli eşzamanlılık (Go/Rust), transaction güvenliği (Postgres/ACID) ve kurumsal mikroservisler.",
     body: "Go (pgx/v5), NestJS ve Python ile yüksek trafikli, veri tutarlılığı yüksek (ACID) ve hataya dayanıklı mikroservisler geliştiriyorum. PostgreSQL Row-Level Security (RLS) politikaları, Redis Streams ile asenkron olay kuyrukları ve Docker tabanlı izole sandbox mimarilerinde derin uzmanlığa sahibim.",
     highlights: [
       { title: "Veri Tutarlılığı & ACID", desc: "PostgreSQL pgx havuzu ve transaction-safe lead/order dağıtımı." },
       { title: "Gerçek Zamanlı Kuyruklar", desc: "Redis Streams, WebSockets ve Goroutine tabanlı asenkron yapılar." },
       { title: "Güvenlik & İzolasyon", desc: "JWT, OAuth2, Bcrypt, RLS ve Docker izole yürütme ortamları." }
-    ]
+    ],
+    featuredProjectIds: ["elocode", "crm-lead", "merchant-order", "cekypets"]
   },
   fullstack: {
-    title: "🌐 Full-Stack Developer Yetkinlikleri",
-    roleName: "Full-Stack Engineer (Next.js · Angular · Cloudflare)",
+    pillBadge: "🌐 Full-Stack Developer Akışı",
+    streamTitle: "Full-Stack Web & Bulut Uygulama Geliştirme",
+    title: "🌐 Full-Stack Developer Yetkinlik & Mimari Özeti",
     tagline: "Modern uçtan uca mimariler, reaktif SPA/SSR arayüzleri ve sunucusuz (Serverless) bulut dağıtımı.",
     body: "Next.js (App Router), Angular 17+ (Standalone Components), React ve Tailwind CSS ile piksel hassasiyetinde, modern ve erişilebilir arayüzler üretiyorum. Arka planda Cloudflare Workers (OpenNext), Supabase ve NestJS ile sıfır gecikmeli API entegrasyonu ve Three.js/WebGL ile 3D katmanlar oluşturuyorum.",
     highlights: [
       { title: "Modern SSR & SPA", desc: "Next.js App Router, Angular 17 Standalone, React Vite ekosistemi." },
       { title: "Cloudflare & Edge", desc: "OpenNext ile Cloudflare Workers üzerinde sıfır sunucu maliyetli SaaS." },
       { title: "Gelişmiş Veri & 3D UI", desc: "Three.js, React Three Fiber ve karar destek analitiği panelleri." }
-    ]
+    ],
+    featuredProjectIds: ["crm-lead", "valorant-premier", "cekypets", "appointment-booking"]
   },
   systems: {
-    title: "🦀 Systems & Low-Level Yetkinlikleri",
-    roleName: "Systems & Low-Level Engineer (Rust · Vulkan · C)",
+    pillBadge: "🦀 Systems Developer Akışı",
+    streamTitle: "Sistem Programlama, Derleyiciler & Donanım Katmanı",
+    title: "🦀 Systems & Low-Level Yetkinlik & Mimari Özeti",
     tagline: "Doğrudan donanım kontrolü, derleyici mimarisi, GPU grafik motorları ve P2P ağ protokolleri.",
     body: "Rust ve C (C11) dillerinde sıfır maliyetli soyutlamalar, özel bellek yöneticileri (custom allocators) ve çok çekirdekli asenkron mimariler (Rayon) ile çalışıyorum. Vulkan API ile sıfırdan Voxel motoru, AST -> HIR -> MIR -> C11 derleyici hatları ve dağıtık P2P canlı yayın mesh protokolleri inşa ettim.",
     highlights: [
       { title: "Grafik & Vulkan API", desc: "Özel GPU bellek havuzları, frustum culling ve voxel greedy meshing." },
       { title: "Derleyici (Compiler) Pipeline", desc: "Tokens, AST, Typed HIR, CFG MIR ve taşınabilir C11 code generator." },
       { title: "Dağıtık P2P & Mesh", desc: "Kendi kendini onaran video ingest ve düşük gecikmeli P2P aktarımı." }
-    ]
+    ],
+    featuredProjectIds: ["deadly-sins-engine", "ceky-lang", "elocode", "zet-lang-source"]
   },
   it: {
-    title: "🖥️ Bilgi İşlem / IT & Altyapı Yetkinlikleri",
-    roleName: "IT Infrastructure, DevOps & Field Systems Engineer",
+    pillBadge: "🖥️ Bilgi İşlem / IT & Altyapı Akışı",
+    streamTitle: "IT Altyapı, Sistem Teşhisi & Saha Operasyonları",
+    title: "🖥️ Bilgi İşlem / IT & Altyapı Yetkinlik Özeti",
     tagline: "Sistem teşhisi, donanım optimizasyonu, RF/Wi-Fi algılama ve %100 çevrimdışı saha operasyonları.",
     body: "Bilgi işlem altyapısı, ağ optimizasyonu, donanım radarları ve fabrika/saha operasyonları için çözümler üretiyorum. Windows API ve UAC entegrasyonu ile CPU/VRAM/Ping otopilotu (AIOps Radar v5.0), modem RF sinyal haritalama ve uçta (edge) internet olmadan çalışan çevrimdışı Android/SQLite araçları geliştirdim.",
     highlights: [
       { title: "AIOps & Sistem Teşhisi", desc: "Win32 API/UAC ile VRAM temizleyici, ping düşürücü ve donanım radarı." },
       { title: "Saha & Ağ Analizi", desc: "RF/Wi-Fi kapsama alanı analitiği ve Docker servis orkestrasyonu." },
       { title: "Çevrimdışı (Edge) Araçlar", desc: "Sıfır internet bağımlılığıyla çalışan Kotlin STT ve fabrika takip sistemleri." }
-    ]
+    ],
+    featuredProjectIds: ["aiops-radar", "wifi-map", "whatsapp-transcript", "work-follower"]
   }
 };
 
@@ -495,64 +503,100 @@ let currentSearch = "";
 
 // --- 4. DOM Initialization & Event Listeners ---
 document.addEventListener("DOMContentLoaded", () => {
-  renderDepartmentSummary(currentRole);
-  renderProjects();
-  setupRoleButtons();
+  renderEntireDepartmentStream(currentRole);
   setupFilterPills();
   setupSearchInput();
   setupModalEvents();
   setupPrintCV();
 });
 
-// Select Role and Smoothly Scroll to Projects
-function selectRoleAndScroll(roleKey) {
-  setRole(roleKey);
-  const projectsSection = document.getElementById("projects");
-  if (projectsSection) {
-    projectsSection.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
-}
-
-// Switch Role Action
-function setRole(roleKey) {
+// Master function: Sets role, updates all components, and smoothly scrolls to showcase stream
+function setRoleAndScroll(roleKey) {
   if (!departmentPitches[roleKey]) return;
   currentRole = roleKey;
 
-  // Update UI selector tabs
+  // 1. Update UI Selector Cards
   document.querySelectorAll(".role-card").forEach(card => {
     card.classList.toggle("active", card.getAttribute("data-role") === roleKey);
   });
 
-  // Update dynamic hero title
-  const dynamicRoleEl = document.getElementById("hero-dynamic-role");
-  if (dynamicRoleEl) {
-    dynamicRoleEl.textContent = departmentPitches[roleKey].roleName;
-  }
+  // 2. Render all parts of the unified stream
+  renderEntireDepartmentStream(roleKey);
 
-  // Update heading in projects section
-  const projectsHeading = document.getElementById("projects-section-heading");
-  if (projectsHeading) {
-    const roleLabels = {
-      backend: "⚙️ Backend Geliştirme Projeleri",
-      fullstack: "🌐 Full-Stack Web Projeleri",
-      systems: "🦀 Sistem & Düşük Seviye Projeleri",
-      it: "🖥️ Bilgi İşlem & Altyapı Projeleri"
-    };
-    projectsHeading.textContent = roleLabels[roleKey] || "Projeler";
+  // 3. Smooth Scroll directly to the top of the Showcase Stream
+  const showcaseSection = document.getElementById("showcase");
+  if (showcaseSection) {
+    showcaseSection.scrollIntoView({ behavior: "smooth", block: "start" });
   }
-
-  // Update Summary Card & Projects
-  renderDepartmentSummary(roleKey);
-  renderProjects();
 }
 
-function setupRoleButtons() {
-  document.querySelectorAll(".role-card").forEach(button => {
-    button.addEventListener("click", () => {
-      const role = button.getAttribute("data-role");
-      setRole(role);
-    });
-  });
+// Render all parts of the unified stream synchronously
+function renderEntireDepartmentStream(roleKey) {
+  const data = departmentPitches[roleKey];
+  if (!data) return;
+
+  // A. Update stream header badges and title
+  const pillEl = document.getElementById("stream-role-title-badge");
+  const mainTitleEl = document.getElementById("stream-main-title");
+  if (pillEl) pillEl.textContent = data.pillBadge;
+  if (mainTitleEl) mainTitleEl.textContent = data.streamTitle;
+
+  // B. Render Department Competency Card (Yetkinlik Kartı)
+  const summaryContainer = document.getElementById("dept-summary-container");
+  if (summaryContainer) {
+    summaryContainer.innerHTML = `
+      <div class="dept-pitch-header">
+        <div class="dept-pitch-title">
+          <span>${data.title}</span>
+        </div>
+        <div class="role-badge">${data.tagline}</div>
+      </div>
+      <p class="dept-pitch-body">${data.body}</p>
+      <div class="dept-highlights">
+        ${data.highlights.map(h => `
+          <div class="highlight-item">
+            <div class="highlight-title">✦ ${h.title}</div>
+            <div class="highlight-desc">${h.desc}</div>
+          </div>
+        `).join("")}
+      </div>
+    `;
+  }
+
+  // C. Render Featured Case Studies for this Department
+  const featuredGrid = document.getElementById("dept-featured-grid");
+  if (featuredGrid) {
+    const featuredProjects = data.featuredProjectIds
+      .map(id => projectsData.find(p => p.id === id))
+      .filter(Boolean);
+
+    featuredGrid.innerHTML = featuredProjects.map(p => `
+      <div class="featured-card">
+        <div class="featured-card-badge">
+          ${p.isPrivate ? "🔒 Özel Mimari (Case Study)" : "🌐 Açık Kaynak Mimari"} · ${p.language}
+        </div>
+        <h4 class="featured-title">${p.name} — ${p.title}</h4>
+        <p class="featured-desc">${p.description}</p>
+        <div class="featured-tags">
+          ${p.tags.slice(0, 4).map(t => `<span class="tech-tag">${t}</span>`).join("")}
+        </div>
+        ${p.caseStudy ? `
+          <button class="btn btn-cyan btn-sm" onclick="openCaseStudyModal('${p.id}')">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            <span>Mimari Şemayı & Vaka Analizini Aç</span>
+          </button>
+        ` : `
+          <a href="${p.githubUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            <span>GitHub Kodunu İncele</span>
+          </a>
+        `}
+      </div>
+    `).join("");
+  }
+
+  // D. Render Full Projects Grid
+  renderProjects();
 }
 
 function setupFilterPills() {
@@ -574,31 +618,6 @@ function setupSearchInput() {
       renderProjects();
     });
   }
-}
-
-// Render dynamic pitch summary
-function renderDepartmentSummary(roleKey) {
-  const container = document.getElementById("dept-summary-container");
-  if (!container) return;
-
-  const data = departmentPitches[roleKey];
-  container.innerHTML = `
-    <div class="dept-pitch-header">
-      <div class="dept-pitch-title">
-        <span>${data.title}</span>
-      </div>
-      <div class="role-badge">${data.tagline}</div>
-    </div>
-    <p class="dept-pitch-body">${data.body}</p>
-    <div class="dept-highlights">
-      ${data.highlights.map(h => `
-        <div class="highlight-item">
-          <div class="highlight-title">✦ ${h.title}</div>
-          <div class="highlight-desc">${h.desc}</div>
-        </div>
-      `).join("")}
-    </div>
-  `;
 }
 
 // Render projects filtered by role, search and public/private
@@ -645,7 +664,7 @@ function renderProjects() {
     <div class="project-card">
       <div class="card-top-row">
         ${p.isPrivate ? 
-          `<span class="project-badge-private">🔒 Özel Mimari (Case Study)</span>` : 
+          `<span class="project-badge-private">🔒 Özel Mimari</span>` : 
           `<span class="project-badge-public">🌐 Açık Kaynak</span>`
         }
         <span class="project-lang-tag">${p.language}</span>
@@ -780,7 +799,7 @@ function setupPrintCV() {
   if (btn) {
     btn.addEventListener("click", () => {
       const origTitle = document.title;
-      document.title = `Eray (cekYc) - ${departmentPitches[currentRole].roleName} - CV`;
+      document.title = `Eray (cekYc) - ${departmentPitches[currentRole].streamTitle} - CV`;
       window.print();
       document.title = origTitle;
     });
