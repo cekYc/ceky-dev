@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="tr" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eray (cekYc) — Systems, Backend, Full-Stack & IT Engineer</title>
+  <meta name="description" content="Eray (cekYc) - Multi-Department Engineering Portfolio & Project Architecture Showcase. Backend, Full-Stack, Systems Programming, and IT Infrastructure.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Background Glow & Grid -->
+  <div class="bg-grid"></div>
+  <div class="glow-sphere glow-1"></div>
+  <div class="glow-sphere glow-2"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="brand">
+        <span class="terminal-prompt">&gt;</span>
+        <span class="brand-name">cekYc</span>
+        <span class="brand-tag">/ dev-hub</span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#departments" class="nav-link">Departmanlar</a>
+        <a href="#projects" class="nav-link">Projeler</a>
+        <a href="#terminal" class="nav-link">Terminal</a>
+        <a href="#skills" class="nav-link">Yetenekler</a>
+        <a href="#contact" class="nav-link">İletişim</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="print-cv-btn" class="btn btn-outline btn-sm">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
+          CV / Yazdır
+        </button>
+        <a href="https://github.com/cekYc" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          GitHub (cekYc)
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-container">
+      <div class="availability-badge">
+        <span class="pulse-dot"></span>
+        <span>Açık Pozisyonlar: <strong>Backend · Systems · Full-Stack · IT & Altyapı</strong> (EU & TR)</span>
+      </div>
+
+      <h1 class="hero-title">
+        <span class="text-white">Eray</span>
+        <span class="text-gradient" id="hero-dynamic-role">Backend & Systems Developer</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Düşük seviye sistem programlamadan (Rust/Vulkan/C) kurumsal dağıtık mikroservis mimarilerine (Go/PostgreSQL/Redis), modern web uygulamalarından (Next.js/Angular) bilgi işlem & altyapı otomasyonuna uzanan uçtan uca mühendislik portfolyosu.
+      </p>
+
+      <!-- Quick Metrics Ribbon -->
+      <div class="stats-ribbon">
+        <div class="stat-card">
+          <span class="stat-num" id="stat-total-repos">48</span>
+          <span class="stat-label">Toplam Depo</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">9</span>
+          <span class="stat-label">Özel (Private) Mimari</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">%98</span>
+          <span class="stat-label">Özgün Kod Tabanı</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">7+</span>
+          <span class="stat-label">Temel Programlama Dili</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Department Persona Switcher (Core Feature) -->
+  <section id="departments" class="departments-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Departman / Başvuru Rolünü Seçin</h2>
+        <p class="section-desc">Başvurulan departmana özel teknik odağı, ilgili kamuya açık ve özel mimarileri tek tıkla filtreleyin.</p>
+      </div>
+
+      <div class="role-selector-grid">
+        <button class="role-card active" data-role="backend">
+          <div class="role-icon">⚙️</div>
+          <div class="role-info">
+            <h3 class="role-name">Backend Developer</h3>
+            <p class="role-tagline">Go, NestJS, Supabase/Postgres, Redis, Microservices, ACID & Auth</p>
+          </div>
+          <div class="role-badge">4 Özel Mimari + 6 Public</div>
+        </button>
+
+        <button class="role-card" data-role="fullstack">
+          <div class="role-icon">🌐</div>
+          <div class="role-info">
+            <h3 class="role-name">Full-Stack Developer</h3>
+            <p class="role-tagline">Next.js App Router, Angular 17, WebSockets, Supabase, Cloudflare</p>
+          </div>
+          <div class="role-badge">5 Özel Mimari + 8 Public</div>
+        </button>
+
+        <button class="role-card" data-role="systems">
+          <div class="role-icon">🦀</div>
+          <div class="role-info">
+            <h3 class="role-name">Systems Developer</h3>
+            <p class="role-tagline">Rust, Vulkan Voxel Engine, Stage-0 Compilers, P2P Mesh, Pure C</p>
+          </div>
+          <div class="role-badge">2 Özel Mimari + 7 Public</div>
+        </button>
+
+        <button class="role-card" data-role="it">
+          <div class="role-icon">🖥️</div>
+          <div class="role-info">
+            <h3 class="role-name">Bilgi İşlem / IT & Altyapı</h3>
+            <p class="role-tagline">System Radar v5, RF/Wi-Fi sensing, Docker, Offline Android, UAC & Ağ</p>
+          </div>
+          <div class="role-badge">Altyapı & Saha Araçları</div>
+        </button>
+      </div>
+
+      <!-- Department Pitch Card (Dynamic) -->
+      <div class="dept-summary-card" id="dept-summary-container">
+        <!-- Injected via JavaScript based on active role -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Explorer Section -->
+  <section id="projects" class="projects-section">
+    <div class="container">
+      <div class="section-header-flex">
+        <div>
+          <h2 class="section-title">İlgili Projeler & Mimariler</h2>
+          <p class="section-desc" id="projects-count-desc">Seçili departman için optimize edilmiş projeler listeleniyor.</p>
+        </div>
+
+        <!-- Filter & Search Controls -->
+        <div class="filter-controls">
+          <div class="search-box">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            <input type="text" id="project-search" placeholder="Proje, dil veya teknoloji ara...">
+          </div>
+
+          <div class="filter-pills">
+            <button class="filter-pill active" data-filter="all">Tümü</button>
+            <button class="filter-pill" data-filter="private">🔒 Özel (Case Study)</button>
+            <button class="filter-pill" data-filter="public">🌐 Açık Kaynak</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="projects-grid" id="projects-grid">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Terminal Section -->
+  <section id="terminal" class="terminal-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">İnteraktif Geliştirici Konsolu (CLI)</h2>
+        <p class="section-desc">Profilimi doğrudan komut satırından keşfedin. İpucu: <code class="code-inline">help</code> veya <code class="code-inline">cat elocode</code> yazın.</p>
+      </div>
+
+      <div class="terminal-window">
+        <div class="terminal-header">
+          <div class="terminal-buttons">
+            <span class="btn-dot dot-red"></span>
+            <span class="btn-dot dot-yellow"></span>
+            <span class="btn-dot dot-green"></span>
+          </div>
+          <div class="terminal-title">eray@ceky-devbox:~ (bash)</div>
+          <div class="terminal-status">ONLINE</div>
+        </div>
+        <div class="terminal-body" id="terminal-output">
+          <div class="terminal-line text-muted">Ceky Developer Shell v2.4.0 (x86_64-pc-windows-msvc)</div>
+          <div class="terminal-line text-muted">Kullanılabilir komutları listelemek için '<span class="text-cyan">help</span>' yazın veya aşağıdaki kısayollara tıklayın.</div>
+          <div class="terminal-quick-actions">
+            <button class="term-btn" onclick="executeTermCommand('help')">help</button>
+            <button class="term-btn" onclick="executeTermCommand('backend')">backend</button>
+            <button class="term-btn" onclick="executeTermCommand('systems')">systems</button>
+            <button class="term-btn" onclick="executeTermCommand('fullstack')">fullstack</button>
+            <button class="term-btn" onclick="executeTermCommand('it')">it</button>
+            <button class="term-btn" onclick="executeTermCommand('cat elocode')">cat elocode</button>
+            <button class="term-btn" onclick="executeTermCommand('cat deadly_sins')">cat deadly_sins</button>
+            <button class="term-btn" onclick="executeTermCommand('stats')">stats</button>
+            <button class="term-btn" onclick="executeTermCommand('clear')">clear</button>
+          </div>
+        </div>
+        <div class="terminal-input-row">
+          <span class="terminal-prompt">eray@devbox:~$</span>
+          <input type="text" id="terminal-input" placeholder="Komut girin..." autocomplete="off" spellcheck="false">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills & Competencies Radar -->
+  <section id="skills" class="skills-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Teknik Yetenek & Mimari Matrisi</h2>
+        <p class="section-desc">Düşük seviye sistemlerden modern bulut ve saha operasyonlarına uzanan uzmanlık alanları.</p>
+      </div>
+
+      <div class="skills-grid">
+        <!-- 1. Systems & Low-Level -->
+        <div class="skill-card">
+          <div class="skill-header">
+            <span class="skill-icon">🦀</span>
+            <h3>Sistem Programlama & Düşük Seviye</h3>
+          </div>
+          <ul class="skill-list">
+            <li><strong>Diller:</strong> Rust, C (C11), C++, Assembly (x86_64), Go</li>
+            <li><strong>Grafik & Oyun Motoru:</strong> Vulkan API, GPU Bellek Yönetimi, Voxel Meshing (Rayon)</li>
+            <li><strong>Derleyici Tasarımı:</strong> Tokens, AST, HIR/MIR Dönüşümleri, C11 Code Generator</li>
+            <li><strong>Ağ & İletişim:</strong> Dağıtık P2P Mesh Protokolleri, WebSockets, Wi-Fi RF Sinyal İşleme</li>
+          </ul>
+        </div>
+
+        <!-- 2. Backend & Distributed Systems -->
+        <div class="skill-card">
+          <div class="skill-header">
+            <span class="skill-icon">⚙️</span>
+            <h3>Backend & Dağıtık Mimariler</h3>
+          </div>
+          <ul class="skill-list">
+            <li><strong>Diller & Frameworks:</strong> Go (Gin/Fiber), NestJS, Node.js/TypeScript, Python (FastAPI)</li>
+            <li><strong>Veritabanları & Veri Akışı:</strong> PostgreSQL (pgx, ACID, RLS), Prisma ORM, Redis Streams</li>
+            <li><strong>Güvenlik & Auth:</strong> JWT, OAuth2, Bcrypt, Katı Rol Tabanlı Yetkilendirme (RBAC/RLS)</li>
+            <li><strong>Mimari Prensipler:</strong> Microservices, Event-Driven, Transaction-Safe Queue/Round-Robin</li>
+          </ul>
+        </div>
+
+        <!-- 3. Full-Stack & Modern Web -->
+        <div class="skill-card">
+          <div class="skill-header">
+            <span class="skill-icon">🌐</span>
+            <h3>Full-Stack & Modern Web</h3>
+          </div>
+          <ul class="skill-list">
+            <li><strong>Frontend:</strong> Next.js (App Router), Angular 17+ (Standalone), React (Vite), Tailwind CSS</li>
+            <li><strong>Görsel & 3D:</strong> Three.js, React Three Fiber (R3F), GSAP ScrollTrigger</li>
+            <li><strong>Cloud & Edge:</strong> Cloudflare Workers, OpenNext, Supabase, Vercel</li>
+            <li><strong>Test & Kalite:</strong> Vitest, Jest, Strict TypeScript, ESLint</li>
+          </ul>
+        </div>
+
+        <!-- 4. Bilgi İşlem / IT, Altyapı & Mobil -->
+        <div class="skill-card">
+          <div class="skill-header">
+            <span class="skill-icon">🖥️</span>
+            <h3>Bilgi İşlem, Altyapı & Mobil</h3>
+          </div>
+          <ul class="skill-list">
+            <li><strong>Sistem & Donanım:</strong> AIOps System Radar, VRAM/CPU Optimizasyonu, UAC Entegrasyonu</li>
+            <li><strong>Konteynerizasyon:</strong> Docker, Docker Compose, Çok Servisli Orkestrasyon</li>
+            <li><strong>Mobil & Edge:</strong> Android (Kotlin) - %100 Çevrimdışı STT & Fabrika Operasyon Takip</li>
+            <li><strong>Saha & Ağ Teşhisi:</strong> Wi-Fi RF Haritalama, Modem Ölçüm Analizi, Yedekleme Stratejileri</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Footer -->
+  <footer id="contact" class="footer-section">
+    <div class="container">
+      <div class="footer-card">
+        <div class="footer-info">
+          <h2>İletişim & Birlikte Çalışma</h2>
+          <p>Avrupa Birliği (EU) ve Türkiye'deki <strong>Backend</strong>, <strong>Systems</strong>, <strong>Full-Stack</strong> ve <strong>Bilgi İşlem / DevOps</strong> pozisyonları için iletişime geçebilirsiniz.</p>
+          
+          <div class="contact-methods">
+            <a href="mailto:cekyy@example.com" class="contact-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span>E-Posta İle İletişime Geç</span>
+            </a>
+            <a href="https://github.com/cekYc" target="_blank" rel="noopener noreferrer" class="contact-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              <span>github.com/cekYc</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-cta">
+          <button class="btn btn-primary btn-lg" onclick="executeTermCommand('contact'); document.getElementById('terminal').scrollIntoView({behavior:'smooth'});">
+            ⚡ Konsolu Başlat & Mesaj Gönder
+          </button>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Eray (cekYc). Düşük seviye sistemlerden modern buluta kadar tüm mimariler için tasarlanmıştır.</p>
+        <p class="text-muted">Gizlilik ve Ticari Güvenlik Standardı: Özel (Private) projelerin kodları ifşa edilmeksizin mimari vaka analizleri (Case Study) sunulmaktadır.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Component: Architecture & Deep Dive Case Study -->
+  <div id="project-modal" class="modal-backdrop">
+    <div class="modal-container">
+      <button id="modal-close-btn" class="modal-close">&times;</button>
+      <div class="modal-content" id="modal-content-body">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
