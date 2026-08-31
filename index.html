@@ -25,11 +25,12 @@
         <span class="brand-tag">dev-hub</span>
       </a>
 
+      <!-- Quick Scroll Anchor Links -->
       <nav class="nav-links">
-        <a href="#showcase" class="nav-link" onclick="setRoleAndScroll('backend')">⚙️ Backend</a>
-        <a href="#showcase" class="nav-link" onclick="setRoleAndScroll('fullstack')">🌐 Full-Stack</a>
-        <a href="#showcase" class="nav-link" onclick="setRoleAndScroll('systems')">🦀 Systems</a>
-        <a href="#showcase" class="nav-link" onclick="setRoleAndScroll('it')">🖥️ Bilgi İşlem</a>
+        <a href="#backend" class="nav-link">⚙️ Backend</a>
+        <a href="#fullstack" class="nav-link">🌐 Full-Stack</a>
+        <a href="#systems" class="nav-link">🦀 Systems</a>
+        <a href="#it" class="nav-link">🖥️ Bilgi İşlem</a>
         <a href="#skills" class="nav-link">Yetenekler</a>
         <a href="#contact" class="nav-link">İletişim</a>
       </nav>
@@ -57,11 +58,11 @@
 
       <h1 class="hero-title">
         <span class="text-white">Eray</span>
-        <span class="text-gradient">Mühendislik & Proje Portfolyosu</span>
+        <span class="text-gradient">Mühendislik & Mimari Portfolyosu</span>
       </h1>
 
       <p class="hero-subtitle">
-        Düşük seviye sistem programlamadan (Rust/Vulkan/C) kurumsal mikroservis mimarilerine (Go/PostgreSQL/Redis), modern web uygulamalarından (Next.js/Angular) bilgi işlem & altyapı otomasyonuna uzanan uçtan uca mühendislik akışı.
+        Düşük seviye sistem programlamadan (Rust/Vulkan/C) kurumsal dağıtık mikroservislere (Go/PostgreSQL/Redis), modern web platformlarından (Next.js/Angular) bilgi işlem & altyapı otomasyonuna uzanan kesintisiz mühendislik akışı.
       </p>
 
       <!-- Quick Stats Ribbon -->
@@ -86,145 +87,286 @@
     </div>
   </section>
 
-  <!-- Department Selection Bar (Global Controller) -->
-  <section class="selector-section">
+  <!-- Global Flow Navigation Bar (Smooth Scroll Jump Buttons) -->
+  <section class="flow-nav-section">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">İlgilendiğiniz Departmanı Seçin</h2>
-        <p class="section-desc">Seçtiğiniz departmanın yetkinlik özeti, amiral mimarileri ve ilgili tüm depoları kesintisiz bir akış halinde aşağıda açılır.</p>
+        <h2 class="section-title">Departman Akışına Hızlı Atlama</h2>
+        <p class="section-desc">Aşağıdaki butonlara tıklayarak sayfadaki ilgili departmanın yetkinlik kartına ve projelerine anında kaydırın.</p>
       </div>
 
-      <div class="role-selector-grid">
-        <!-- 1. Backend -->
-        <button class="role-card active" data-role="backend" onclick="setRoleAndScroll('backend')">
-          <div class="role-card-header">
-            <span class="role-icon">⚙️</span>
-            <span class="role-badge">4 Özel + 6 Public</span>
+      <div class="flow-buttons-grid">
+        <a href="#backend" class="flow-nav-btn">
+          <span class="flow-btn-icon">⚙️</span>
+          <div class="flow-btn-text">
+            <strong>Backend Developer</strong>
+            <small>Go, NestJS, Postgres ACID, Redis Streams</small>
           </div>
-          <h3 class="role-name">Backend Developer</h3>
-          <p class="role-tagline">Go, NestJS, Postgres ACID, Redis Streams & Microservices</p>
-          <div class="role-indicator">
-            <span>Akışı Görüntüle</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </div>
-        </button>
+          <span class="flow-btn-arrow">↓</span>
+        </a>
 
-        <!-- 2. Full-Stack -->
-        <button class="role-card" data-role="fullstack" onclick="setRoleAndScroll('fullstack')">
-          <div class="role-card-header">
-            <span class="role-icon">🌐</span>
-            <span class="role-badge">5 Özel + 8 Public</span>
+        <a href="#fullstack" class="flow-nav-btn">
+          <span class="flow-btn-icon">🌐</span>
+          <div class="flow-btn-text">
+            <strong>Full-Stack Developer</strong>
+            <small>Next.js App Router, Angular 17, Cloudflare, Three.js</small>
           </div>
-          <h3 class="role-name">Full-Stack Developer</h3>
-          <p class="role-tagline">Next.js App Router, Angular 17, Cloudflare Workers, Three.js</p>
-          <div class="role-indicator">
-            <span>Akışı Görüntüle</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </div>
-        </button>
+          <span class="flow-btn-arrow">↓</span>
+        </a>
 
-        <!-- 3. Systems -->
-        <button class="role-card" data-role="systems" onclick="setRoleAndScroll('systems')">
-          <div class="role-card-header">
-            <span class="role-icon">🦀</span>
-            <span class="role-badge">2 Özel + 7 Public</span>
+        <a href="#systems" class="flow-nav-btn">
+          <span class="flow-btn-icon">🦀</span>
+          <div class="flow-btn-text">
+            <strong>Systems Developer</strong>
+            <small>Rust, Vulkan Voxel Engine, Stage-0 Compilers, C</small>
           </div>
-          <h3 class="role-name">Systems Developer</h3>
-          <p class="role-tagline">Rust, Vulkan Voxel Engine, Stage-0 Compilers, P2P Mesh, C</p>
-          <div class="role-indicator">
-            <span>Akışı Görüntüle</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </div>
-        </button>
+          <span class="flow-btn-arrow">↓</span>
+        </a>
 
-        <!-- 4. IT & Infrastructure -->
-        <button class="role-card" data-role="it" onclick="setRoleAndScroll('it')">
-          <div class="role-card-header">
-            <span class="role-icon">🖥️</span>
-            <span class="role-badge">Altyapı & Saha</span>
+        <a href="#it" class="flow-nav-btn">
+          <span class="flow-btn-icon">🖥️</span>
+          <div class="flow-btn-text">
+            <strong>Bilgi İşlem / IT & Altyapı</strong>
+            <small>AIOps Radar v5, RF/Wi-Fi Analiz, Çevrimdışı Android</small>
           </div>
-          <h3 class="role-name">Bilgi İşlem / IT & Altyapı</h3>
-          <p class="role-tagline">AIOps Radar v5, RF/Wi-Fi Analizi, Docker, Çevrimdışı Android</p>
-          <div class="role-indicator">
-            <span>Akışı Görüntüle</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </div>
-        </button>
+          <span class="flow-btn-arrow">↓</span>
+        </a>
       </div>
     </div>
   </section>
 
   <!-- =======================================================================
-       UNIFIED DEPARTMENT SHOWCASE STREAM (Akış Odaklı Bölüm)
+       CONTINUOUS DEPARTMENT STREAM (TÜM DEPARTMANLAR SIRASIYLA AKAR)
        ======================================================================= -->
-  <section id="showcase" class="showcase-stream-section">
-    <div class="container">
-      
-      <!-- 1. AKIŞIN BAŞI: Departman Başlığı & Yetkinlik Kartı (Öncelikli Görüntülenir) -->
-      <div class="stream-block stream-header-block">
-        <div class="stream-role-pill" id="stream-role-pill">
-          <span class="pulse-dot"></span>
-          <span id="stream-role-title-badge">⚙️ Backend Developer Akışı</span>
-        </div>
-        <h2 class="stream-main-title" id="stream-main-title">Backend & Dağıtık Sistemler Mühendisliği</h2>
-      </div>
+  <div class="continuous-stream-container">
 
-      <!-- Dinamik Yetkinlik Kartı -->
-      <div class="dept-summary-card" id="dept-summary-container">
-        <!-- Rendered dynamically by app.js -->
-      </div>
-
-      <!-- 2. AKIŞIN DEVAMI: Öne Çıkan Amiral Mimariler (Case Studies) -->
-      <div class="stream-block">
-        <div class="stream-sub-header">
-          <div class="stream-step-badge">1. Adım</div>
-          <h3 class="stream-sub-title">🏆 Amiral Mimariler & Vaka Analizleri (Case Studies)</h3>
-          <p class="stream-sub-desc">Bu departman için tasarlanan gizlilik standartlarına uygun mimari şemalar ve veri akışları.</p>
-        </div>
-
-        <div class="featured-grid" id="dept-featured-grid">
-          <!-- Rendered dynamically by app.js based on selected role -->
-        </div>
-      </div>
-
-      <!-- 3. AKIŞIN DEVAMI: İlgili Tüm Projeler & Depolar -->
-      <div class="stream-block" style="border-bottom: none;">
-        <div class="section-header-flex">
-          <div>
-            <div class="stream-step-badge">2. Adım</div>
-            <h3 class="stream-sub-title" id="projects-section-heading">İlgili Tüm Kod Tabanları & Depolar</h3>
-            <p class="stream-sub-desc" id="projects-count-desc">Seçili departman için optimize edilmiş projeler listeleniyor.</p>
+    <!-- =====================================================================
+         1. BÖLÜM: BACKEND DEVELOPER
+         ===================================================================== -->
+    <section id="backend" class="dept-stream-section">
+      <div class="container">
+        
+        <!-- Departman Başlığı -->
+        <div class="dept-stream-header">
+          <div class="dept-badge-pill">
+            <span class="pulse-dot"></span>
+            <span>1. DEPARTMAN ODAĞI</span>
           </div>
+          <h2 class="dept-stream-title">⚙️ Backend & Dağıtık Sistemler Mühendisliği</h2>
+          <p class="dept-stream-subtitle">Yüksek hacimli eşzamanlılık (Go/Rust), transaction güvenliği (Postgres/ACID) ve kurumsal mikroservis mimarileri.</p>
+        </div>
 
-          <!-- Filter Controls -->
-          <div class="filter-controls">
-            <div class="search-box">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-              <input type="text" id="project-search" placeholder="Proje, dil veya teknoloji ara...">
+        <!-- 1.1 Yetkinlik Kartı (Öncelikli Görüntülenir) -->
+        <div class="dept-summary-card">
+          <div class="dept-pitch-header">
+            <div class="dept-pitch-title">
+              <span>⚙️ Backend Developer Yetkinlik & Mimari Özeti</span>
             </div>
-
-            <div class="filter-pills">
-              <button class="filter-pill active" data-filter="all">Tümü</button>
-              <button class="filter-pill" data-filter="private">🔒 Özel</button>
-              <button class="filter-pill" data-filter="public">🌐 Açık Kaynak</button>
+            <div class="role-badge">Go · NestJS · PostgreSQL (pgx) · Redis Streams · Docker</div>
+          </div>
+          <p class="dept-pitch-body">
+            Go (pgx/v5), NestJS ve Python ile yüksek trafikli, veri tutarlılığı yüksek (ACID) ve hataya dayanıklı mikroservisler geliştiriyorum. PostgreSQL Row-Level Security (RLS) politikaları, Redis Streams ile asenkron olay kuyrukları ve Docker tabanlı izole sandbox mimarilerinde derin uzmanlığa sahibim.
+          </p>
+          <div class="dept-highlights">
+            <div class="highlight-item">
+              <div class="highlight-title">✦ Veri Tutarlılığı & ACID</div>
+              <div class="highlight-desc">PostgreSQL pgx havuzu, transaction kilitleme ve round-robin kuyruk güvenliği.</div>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-title">✦ Gerçek Zamanlı Kuyruklar</div>
+              <div class="highlight-desc">Redis Streams, WebSockets ve Goroutine tabanlı milisaniye altı asenkron yapılar.</div>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-title">✦ Güvenlik & İzolasyon</div>
+              <div class="highlight-desc">JWT, OAuth2, Bcrypt, Katı RLS ve Docker izole sandbox yürütme ortamları.</div>
             </div>
           </div>
         </div>
 
-        <!-- Projects Grid -->
-        <div class="projects-grid" id="projects-grid">
-          <!-- Rendered dynamically by app.js -->
+        <!-- 1.2 Backend Projeleri -->
+        <div class="stream-projects-block">
+          <h3 class="stream-block-title">Backend Projeleri & Mimariler</h3>
+          
+          <div class="projects-grid" id="backend-projects-grid">
+            <!-- Rendered by app.js -->
+          </div>
         </div>
-      </div>
 
-    </div>
-  </section>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         2. BÖLÜM: FULL-STACK DEVELOPER
+         ===================================================================== -->
+    <section id="fullstack" class="dept-stream-section">
+      <div class="container">
+        
+        <!-- Departman Başlığı -->
+        <div class="dept-stream-header">
+          <div class="dept-badge-pill">
+            <span class="pulse-dot"></span>
+            <span>2. DEPARTMAN ODAĞI</span>
+          </div>
+          <h2 class="dept-stream-title">🌐 Full-Stack Web & Bulut Uygulama Geliştirme</h2>
+          <p class="dept-stream-subtitle">Modern uçtan uca mimariler, reaktif SPA/SSR arayüzleri ve sunucusuz (Serverless) bulut dağıtımı.</p>
+        </div>
+
+        <!-- 2.1 Yetkinlik Kartı -->
+        <div class="dept-summary-card">
+          <div class="dept-pitch-header">
+            <div class="dept-pitch-title">
+              <span>🌐 Full-Stack Developer Yetkinlik & Mimari Özeti</span>
+            </div>
+            <div class="role-badge">Next.js App Router · Angular 17 · Cloudflare Workers · Three.js</div>
+          </div>
+          <p class="dept-pitch-body">
+            Next.js (App Router), Angular 17+ (Standalone Components), React ve Tailwind CSS ile piksel hassasiyetinde, modern ve erişilebilir arayüzler üretiyorum. Arka planda Cloudflare Workers (OpenNext), Supabase ve NestJS ile sıfır gecikmeli API entegrasyonu ve Three.js/WebGL ile 3D katmanlar oluşturuyorum.
+          </p>
+          <div class="dept-highlights">
+            <div class="highlight-item">
+              <div class="highlight-title">✦ Modern SSR & SPA</div>
+              <div class="highlight-desc">Next.js App Router, Angular 17 Standalone, React Vite ekosistemi.</div>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-title">✦ Cloudflare & Edge</div>
+              <div class="highlight-desc">OpenNext ile Cloudflare Workers üzerinde sıfır sunucu maliyetli SaaS.</div>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-title">✦ Gelişmiş Veri & 3D UI</div>
+              <div class="highlight-desc">Three.js, React Three Fiber ve karar destek analitiği panelleri.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2.2 Full-Stack Projeleri -->
+        <div class="stream-projects-block">
+          <h3 class="stream-block-title">Full-Stack Projeleri & Mimariler</h3>
+          
+          <div class="projects-grid" id="fullstack-projects-grid">
+            <!-- Rendered by app.js -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         3. BÖLÜM: SYSTEMS DEVELOPER
+         ===================================================================== -->
+    <section id="systems" class="dept-stream-section">
+      <div class="container">
+        
+        <!-- Departman Başlığı -->
+        <div class="dept-stream-header">
+          <div class="dept-badge-pill">
+            <span class="pulse-dot"></span>
+            <span>3. DEPARTMAN ODAĞI</span>
+          </div>
+          <h2 class="dept-stream-title">🦀 Sistem Programlama, Derleyiciler & Donanım Katmanı</h2>
+          <p class="dept-stream-subtitle">Doğrudan donanım kontrolü, derleyici mimarisi, GPU grafik motorları ve P2P ağ protokolleri.</p>
+        </div>
+
+        <!-- 3.1 Yetkinlik Kartı -->
+        <div class="dept-summary-card">
+          <div class="dept-pitch-header">
+            <div class="dept-pitch-title">
+              <span>🦀 Systems & Low-Level Yetkinlik & Mimari Özeti</span>
+            </div>
+            <div class="role-badge">Rust · Vulkan API · C (C11) · AST Derleyicileri · P2P Mesh</div>
+          </div>
+          <p class="dept-pitch-body">
+            Rust ve C (C11) dillerinde sıfır maliyetli soyutlamalar, özel bellek yöneticileri (custom allocators) ve çok çekirdekli asenkron mimariler (Rayon) ile çalışıyorum. Vulkan API ile sıfırdan Voxel motoru, AST -> HIR -> MIR -> C11 derleyici hatları ve dağıtık P2P canlı yayın mesh protokolleri inşa ettim.
+          </p>
+          <div class="dept-highlights">
+            <div class="highlight-item">
+              <div class="highlight-title">✦ Grafik & Vulkan API</div>
+              <div class="highlight-desc">Özel GPU bellek havuzları, frustum culling ve voxel greedy meshing.</div>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-title">✦ Derleyici (Compiler) Pipeline</div>
+              <div class="highlight-desc">Tokens, AST, Typed HIR, CFG MIR ve taşınabilir C11 code generator.</div>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-title">✦ Dağıtık P2P & Mesh</div>
+              <div class="highlight-desc">Kendi kendini onaran video ingest ve düşük gecikmeli P2P aktarımı.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3.2 Systems Projeleri -->
+        <div class="stream-projects-block">
+          <h3 class="stream-block-title">Sistem & Düşük Seviye Projeleri</h3>
+          
+          <div class="projects-grid" id="systems-projects-grid">
+            <!-- Rendered by app.js -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         4. BÖLÜM: BİLGİ İŞLEM / IT & ALTYAPI
+         ===================================================================== -->
+    <section id="it" class="dept-stream-section">
+      <div class="container">
+        
+        <!-- Departman Başlığı -->
+        <div class="dept-stream-header">
+          <div class="dept-badge-pill">
+            <span class="pulse-dot"></span>
+            <span>4. DEPARTMAN ODAĞI</span>
+          </div>
+          <h2 class="dept-stream-title">🖥️ Bilgi İşlem / IT Altyapı, Sistem Teşhisi & Saha</h2>
+          <p class="dept-stream-subtitle">Sistem teşhisi, donanım optimizasyonu, RF/Wi-Fi algılama ve %100 çevrimdışı saha operasyonları.</p>
+        </div>
+
+        <!-- 4.1 Yetkinlik Kartı -->
+        <div class="dept-summary-card">
+          <div class="dept-pitch-header">
+            <div class="dept-pitch-title">
+              <span>🖥️ Bilgi İşlem & Saha Operasyonları Yetkinlik Özeti</span>
+            </div>
+            <div class="role-badge">AIOps Radar v5 · Win32/UAC · Docker · Çevrimdışı Android STT</div>
+          </div>
+          <p class="dept-pitch-body">
+            Bilgi işlem altyapısı, ağ optimizasyonu, donanım radarları ve fabrika/saha operasyonları için çözümler üretiyorum. Windows API ve UAC entegrasyonu ile CPU/VRAM/Ping otopilotu (AIOps Radar v5.0), modem RF sinyal haritalama ve uçta (edge) internet olmadan çalışan çevrimdışı Android/SQLite araçları geliştirdim.
+          </p>
+          <div class="dept-highlights">
+            <div class="highlight-item">
+              <div class="highlight-title">✦ AIOps & Sistem Teşhisi</div>
+              <div class="highlight-desc">Win32 API/UAC ile VRAM temizleyici, ping düşürücü ve donanım radarı.</div>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-title">✦ Saha & Ağ Analizi</div>
+              <div class="highlight-desc">RF/Wi-Fi kapsama alanı analitiği ve Docker servis orkestrasyonu.</div>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-title">✦ Çevrimdışı (Edge) Araçlar</div>
+              <div class="highlight-desc">Sıfır internet bağımlılığıyla çalışan Kotlin STT ve fabrika takip sistemleri.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4.2 IT Projeleri -->
+        <div class="stream-projects-block">
+          <h3 class="stream-block-title">Bilgi İşlem, Altyapı & Saha Projeleri</h3>
+          
+          <div class="projects-grid" id="it-projects-grid">
+            <!-- Rendered by app.js -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
 
   <!-- Skills Matrix -->
   <section id="skills" class="skills-section">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Teknik Yetenek & Mimari Matrisi</h2>
+        <h2 class="section-title">Genel Teknik Yetenek Matrisi</h2>
         <p class="section-desc">Düşük seviye sistemlerden modern bulut ve saha operasyonlarına uzanan uzmanlık alanları.</p>
       </div>
 

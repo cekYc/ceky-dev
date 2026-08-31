@@ -54,6 +54,11 @@ body {
   min-height: 100vh;
 }
 
+/* Smooth anchor offsets for sticky navbar */
+section[id] {
+  scroll-margin-top: 80px;
+}
+
 /* Background Atmosphere */
 .bg-grid {
   position: fixed;
@@ -241,7 +246,6 @@ body {
   font-size: 0.88rem;
   font-weight: 500;
   transition: color 0.2s ease;
-  cursor: pointer;
 }
 
 .nav-link:hover {
@@ -358,9 +362,9 @@ body {
 }
 
 /* ==========================================================================
-   Selector Bar
+   Flow Navigation Buttons (Jump Bar)
    ========================================================================== */
-.selector-section {
+.flow-nav-section {
   padding: 30px 0 20px;
 }
 
@@ -384,200 +388,154 @@ body {
   margin: 0 auto;
 }
 
-.role-selector-grid {
+.flow-buttons-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
 }
 
-.role-card {
+.flow-nav-btn {
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
-  padding: 20px 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  text-align: left;
-  cursor: pointer;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  overflow: hidden;
-}
-
-.role-card:hover {
-  border-color: rgba(56, 189, 248, 0.5);
-  background: var(--bg-card);
-  transform: translateY(-3px);
-}
-
-.role-card.active {
-  background: linear-gradient(180deg, rgba(37, 99, 235, 0.16) 0%, var(--bg-card) 100%);
-  border-color: var(--accent-blue);
-  box-shadow: 0 0 25px -5px rgba(37, 99, 235, 0.35);
-}
-
-.role-card.active::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-blue), var(--accent-purple));
-}
-
-.role-card-header {
+  padding: 18px 16px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
 }
 
-.role-icon {
+.flow-nav-btn:hover {
+  background: var(--bg-card);
+  border-color: var(--accent-blue);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px -5px rgba(56, 189, 248, 0.25);
+}
+
+.flow-btn-icon {
   font-size: 1.5rem;
 }
 
-.role-badge {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  color: var(--accent-cyan);
-  background: rgba(0, 240, 255, 0.08);
-  padding: 3px 8px;
-  border-radius: 4px;
-}
-
-.role-name {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #ffffff;
-}
-
-.role-tagline {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  line-height: 1.4;
+.flow-btn-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
   flex-grow: 1;
 }
 
-.role-indicator {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 0.82rem;
-  font-weight: 600;
+.flow-btn-text strong {
+  font-size: 0.98rem;
+  color: #ffffff;
+}
+
+.flow-btn-text small {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  line-height: 1.3;
+}
+
+.flow-btn-arrow {
   color: var(--accent-blue);
-  margin-top: 4px;
-  padding-top: 8px;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 1.2rem;
+  font-weight: 700;
+  transition: transform 0.2s ease;
+}
+
+.flow-nav-btn:hover .flow-btn-arrow {
+  transform: translateY(3px);
 }
 
 /* ==========================================================================
-   Unified Showcase Stream Section (Akış Odaklı Bölüm)
+   Continuous Department Stream Sections
    ========================================================================== */
-.showcase-stream-section {
-  padding: 50px 0 60px;
-  scroll-margin-top: 80px;
+.continuous-stream-container {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  padding: 40px 0 60px;
 }
 
-.stream-block {
-  padding-bottom: 40px;
-  margin-bottom: 40px;
-  border-bottom: 1px solid var(--border-subtle);
+.dept-stream-section {
+  position: relative;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.stream-header-block {
+.dept-stream-header {
   margin-bottom: 24px;
-  padding-bottom: 0;
-  border-bottom: none;
 }
 
-.stream-role-pill {
+.dept-badge-pill {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 14px;
-  background: rgba(56, 189, 248, 0.12);
-  border: 1px solid rgba(56, 189, 248, 0.3);
+  padding: 5px 12px;
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.25);
   border-radius: 9999px;
   color: var(--accent-cyan);
   font-family: var(--font-mono);
-  font-size: 0.85rem;
-  margin-bottom: 12px;
+  font-size: 0.78rem;
+  margin-bottom: 10px;
 }
 
-.stream-main-title {
-  font-size: 2.1rem;
+.dept-stream-title {
+  font-size: 2rem;
   font-weight: 800;
   color: #ffffff;
   letter-spacing: -0.5px;
-}
-
-.stream-sub-header {
-  margin-bottom: 24px;
-}
-
-.stream-step-badge {
-  display: inline-block;
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  color: var(--accent-purple);
-  background: rgba(168, 85, 247, 0.12);
-  border: 1px solid rgba(168, 85, 247, 0.3);
-  padding: 2px 8px;
-  border-radius: 4px;
-  text-transform: uppercase;
   margin-bottom: 6px;
 }
 
-.stream-sub-title {
-  font-size: 1.45rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 6px;
-}
-
-.stream-sub-desc {
+.dept-stream-subtitle {
   color: var(--text-secondary);
-  font-size: 0.92rem;
+  font-size: 1rem;
 }
 
-/* Dynamic Department Competency Pitch Card */
+/* Department Competency Card (Yetkinlik Kartı) */
 .dept-summary-card {
   background: linear-gradient(135deg, rgba(21, 27, 43, 0.95), rgba(17, 22, 34, 0.95));
   border: 1px solid rgba(56, 189, 248, 0.35);
   border-radius: var(--radius-lg);
-  padding: 28px 32px;
+  padding: 26px 30px;
   box-shadow: var(--shadow-card);
-  margin-bottom: 40px;
-  animation: fadeIn 0.3s ease-out;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
+  margin-bottom: 36px;
 }
 
 .dept-pitch-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 10px;
 }
 
 .dept-pitch-title {
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: #ffffff;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
+}
+
+.role-badge {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent-cyan);
+  background: rgba(0, 240, 255, 0.08);
+  padding: 4px 10px;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 240, 255, 0.2);
 }
 
 .dept-pitch-body {
   color: var(--text-secondary);
-  font-size: 0.98rem;
+  font-size: 0.95rem;
   line-height: 1.7;
   margin-bottom: 20px;
 }
@@ -608,138 +566,19 @@ body {
   color: var(--text-muted);
 }
 
-/* Featured Case Studies Grid (Inside Stream) */
-.featured-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+/* Stream Projects Block */
+.stream-projects-block {
+  margin-top: 10px;
 }
 
-.featured-card {
-  background: linear-gradient(135deg, rgba(21, 27, 43, 0.9), rgba(15, 20, 32, 0.9));
-  border: 1px solid rgba(168, 85, 247, 0.3);
-  border-radius: var(--radius-lg);
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  transition: all 0.25s ease;
-  position: relative;
-}
-
-.featured-card:hover {
-  border-color: var(--accent-purple);
-  transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(168, 85, 247, 0.2);
-}
-
-.featured-card-badge {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  background: rgba(168, 85, 247, 0.15);
-  color: #d8b4fe;
-  border: 1px solid rgba(168, 85, 247, 0.3);
-  padding: 3px 8px;
-  border-radius: 4px;
-  width: fit-content;
-  margin-bottom: 12px;
-}
-
-.featured-title {
-  font-size: 1.2rem;
+.stream-block-title {
+  font-size: 1.3rem;
   font-weight: 700;
   color: #ffffff;
-  margin-bottom: 8px;
-}
-
-.featured-desc {
-  font-size: 0.88rem;
-  color: var(--text-secondary);
-  line-height: 1.6;
-  margin-bottom: 16px;
-  flex-grow: 1;
-}
-
-.featured-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-bottom: 18px;
-}
-
-/* ==========================================================================
-   Projects Grid & Filters
-   ========================================================================== */
-.section-header-flex {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  margin-bottom: 24px;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-
-.filter-controls {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.search-box {
+  margin-bottom: 20px;
   display: flex;
   align-items: center;
   gap: 8px;
-  background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-sm);
-  padding: 8px 12px;
-  color: var(--text-secondary);
-  width: 240px;
-  transition: all 0.2s ease;
-}
-
-.search-box:focus-within {
-  border-color: var(--accent-blue);
-  box-shadow: 0 0 12px rgba(56, 189, 248, 0.2);
-}
-
-.search-box input {
-  background: transparent;
-  border: none;
-  outline: none;
-  color: #ffffff;
-  font-size: 0.88rem;
-  width: 100%;
-}
-
-.filter-pills {
-  display: flex;
-  gap: 6px;
-  background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
-  padding: 4px;
-  border-radius: var(--radius-sm);
-}
-
-.filter-pill {
-  background: transparent;
-  border: none;
-  color: var(--text-muted);
-  font-size: 0.8rem;
-  font-weight: 600;
-  padding: 6px 12px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.filter-pill:hover {
-  color: var(--text-primary);
-}
-
-.filter-pill.active {
-  background: var(--bg-card-hover);
-  color: var(--accent-cyan);
 }
 
 /* Projects Grid */
@@ -1117,8 +956,7 @@ body {
    Responsive & Print Styles
    ========================================================================== */
 @media (max-width: 1024px) {
-  .role-selector-grid { grid-template-columns: repeat(2, 1fr); }
-  .featured-grid { grid-template-columns: 1fr; }
+  .flow-buttons-grid { grid-template-columns: repeat(2, 1fr); }
   .projects-grid { grid-template-columns: repeat(2, 1fr); }
   .stats-ribbon { grid-template-columns: repeat(2, 1fr); }
   .dept-highlights { grid-template-columns: 1fr; }
@@ -1127,8 +965,8 @@ body {
 @media (max-width: 768px) {
   .nav-links { display: none; }
   .hero-title { font-size: 2.1rem; }
-  .stream-main-title { font-size: 1.65rem; }
-  .role-selector-grid { grid-template-columns: 1fr; }
+  .dept-stream-title { font-size: 1.6rem; }
+  .flow-buttons-grid { grid-template-columns: 1fr; }
   .projects-grid { grid-template-columns: 1fr; }
   .skills-grid { grid-template-columns: 1fr; }
   .modal-grid-2 { grid-template-columns: 1fr; }
@@ -1142,18 +980,18 @@ body {
     background: #ffffff !important;
     color: #111827 !important;
   }
-  .bg-grid, .glow-sphere, .navbar, .selector-section, .footer-cta, .filter-controls, .nav-actions, .pulse-dot {
+  .bg-grid, .glow-sphere, .navbar, .flow-nav-section, .footer-cta, .nav-actions, .pulse-dot {
     display: none !important;
   }
   .hero-title .text-white { color: #111827 !important; }
-  .hero-subtitle, .section-desc, .project-desc, .skill-list li { color: #374151 !important; }
-  .project-card, .skill-card, .dept-summary-card, .stat-card, .featured-card {
+  .hero-subtitle, .dept-stream-subtitle, .project-desc, .skill-list li { color: #374151 !important; }
+  .project-card, .skill-card, .dept-summary-card, .stat-card {
     background: #ffffff !important;
     border: 1px solid #e5e7eb !important;
     color: #111827 !important;
     break-inside: avoid;
     box-shadow: none !important;
   }
-  .project-title, .role-name, .skill-header h3, .stat-num, .stream-main-title { color: #111827 !important; }
+  .project-title, .skill-header h3, .stat-num, .dept-stream-title { color: #111827 !important; }
   .tech-tag { background: #f3f4f6 !important; color: #1f2937 !important; border-color: #e5e7eb !important; }
 }

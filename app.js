@@ -4,8 +4,9 @@
  */
 
 // --- 1. Rich Projects Data Model ---
+// IMPORTANT: All private projects have NO GitHub URLs to protect privacy and avoid 404 links.
 const projectsData = [
-  // --- BACKEND & DISTRIBUTED SYSTEMS ---
+  // --- 1. BACKEND & DISTRIBUTED SYSTEMS ---
   {
     id: "elocode",
     name: "EloCode",
@@ -13,10 +14,9 @@ const projectsData = [
     category: ["backend", "systems"],
     isPrivate: true,
     language: "Go / Rust",
-    stars: 0,
     tags: ["Go 1.22", "Rust AST", "PostgreSQL", "Redis Streams", "Docker Sandbox", "pgx/v5"],
     description: "Kurumsal geliştiriciler için kod tabanını sızdırmadan gizlilik korumalı (Zero-Leak) rekabetçi kod inceleme, hata ayıklama ve mühendis eşleştirme platformu.",
-    githubUrl: "https://github.com/cekYc/EloCode",
+    githubUrl: null,
     caseStudy: {
       tagline: "Gizlilik Öncelikli Dağıtık Kod İnceleme & İşlem Güvenliği Mimarisi",
       problem: "Kurumsal şirketler fikri mülkiyet endişeleri nedeniyle açık platformlarda kod inceleme veya eşleştirme yapamıyor; mevcut araçlar ise bağlamdan yoksun kalıyor.",
@@ -54,7 +54,7 @@ const projectsData = [
     language: "TypeScript",
     tags: ["Next.js App Router", "Supabase Postgres", "RLS Security", "Cloudflare Workers", "n8n", "OpenNext"],
     description: "Emlak ve kurumsal ofisler için 4 kaynaktan (Webhook, Form, Manuel, CSV) gelen müşteri taleplerini eşit ve transaction-safe dağıtan, SLA uyarı motorlu SaaS.",
-    githubUrl: "https://github.com/cekYc/crm",
+    githubUrl: null,
     caseStudy: {
       tagline: "PostgreSQL Row-Level Security (RLS) & Edge-Ready CRM Platformu",
       problem: "Birden fazla danışmanın bulunduğu ofislerde lead dağıtımında haksızlık, SLA kaçakları (30-60 dk gecikmeler) ve veri izolasyonu eksikliği yaşanıyordu.",
@@ -91,7 +91,7 @@ const projectsData = [
     language: "Go",
     tags: ["Go 1.22", "WebSockets", "JWT Auth", "Docker Compose", "TypeScript", "Real-time"],
     description: "Restoran mutfak paneli, kurye mobil takibi ve müşteri siparişlerini anlık WebSockets üzerinden senkronize eden yüksek performanslı Go backend mimarisi.",
-    githubUrl: "https://github.com/cekYc/merchant_online_order",
+    githubUrl: null,
     caseStudy: {
       tagline: "Go & WebSockets Tabanlı Sıfır Gecikmeli Sipariş & Lojistik Dağıtımı",
       problem: "Geleneksel webhooks ve HTTP polling yöntemleri sipariş yoğunluğunda gecikmeye ve sunucu darboğazına yol açıyordu.",
@@ -124,7 +124,7 @@ const projectsData = [
     language: "TypeScript",
     tags: ["Angular 17", "NestJS", "Prisma ORM", "PostgreSQL", "@nestjs/schedule", "Docker"],
     description: "Evcil hayvanların yaş, kilo ve alerjilerine göre dinamik periyodik mama/bakım aboneliği oluşturan, otomatik cron motorlu SaaS mimarisi.",
-    githubUrl: "https://github.com/cekYc/cekypets",
+    githubUrl: null,
     caseStudy: {
       tagline: "NestJS & Prisma Destekli Otonom Abonelik & KVKK/Audit Altyapısı",
       problem: "Periyodik siparişlerde kullanıcı müdahalesine gerek kalmadan teslimat tarihlerini yönetmek ve tam hukuki/KVKK uyumluluğunu sağlamak gerekiyordu.",
@@ -157,7 +157,6 @@ const projectsData = [
     category: ["backend"],
     isPrivate: false,
     language: "Go",
-    stars: 1,
     tags: ["Go", "Pluggable Transport", "Hash Deduplication", "Telegram API", "Discord Webhooks"],
     description: "Telegram kanallarından gelen yüksek çözünürlüklü medyaları hash-tabanlı deduplication algoritması ile filtreleyip Discord kanallarına aktaran Go botu.",
     githubUrl: "https://github.com/cekYc/cross-platform_media_sharing",
@@ -170,14 +169,98 @@ const projectsData = [
     category: ["backend", "systems"],
     isPrivate: false,
     language: "Go",
-    stars: 0,
     tags: ["Go", "Block Parser", "AST Generator", "High Performance"],
     description: "Özel doküman formatlarını blok bazında tarayıp yapılandırılmış JSON ve AST formatına dönüştüren yüksek hızlı Go ayrıştırıcı kütüphanesi.",
     githubUrl: "https://github.com/cekYc/ceky-parser",
     caseStudy: null
   },
 
-  // --- SYSTEMS & LOW-LEVEL PROGRAMMING ---
+  // --- 2. FULL-STACK DEVELOPER ---
+  {
+    id: "valorant-premier",
+    name: "Premier Lab",
+    title: "Espor Karar Verdiren Zayıflık Teşhis & Scouting Motoru",
+    category: ["fullstack"],
+    isPrivate: true,
+    language: "TypeScript",
+    tags: ["Next.js", "Weakness Diagnostic Engine", "Scouting", "VOD Tagging", "Data Analytics"],
+    description: "Basit istatistikler yerine takıma 'bu hafta ne antrenmanı yapmalıyız?' kararını veren ~15 kurallı teşhis motoruna ve VOD etiketleme sistemine sahip analiz platformu.",
+    githubUrl: null,
+    caseStudy: {
+      tagline: "Kural Tabanlı Zayıflık Teşhis Motoru ve Scouting Platformu",
+      problem: "Mevcut espor analiz araçları yalnızca sayıları listeler, oyunculara ve koçlara somut antrenman kararı üretemez.",
+      solution: "Küçük örneklemlerde yanılmayan (`sample size >= 6` kuralı), oyuncuların Mekanik ↔ Oyun Bilgisi ayrımını çıkaran ve otomatik VOD anı etiketleyen bir teşhis algoritması kodlandı.",
+      flow: `[Maç Verisi & VOD Etiketleri]
+       │
+       ▼
+[Zayıflık Teşhis Motoru (lib/analysis/weaknesses.ts)]
+       ├──► [Örneklem Güveni Kontrolü (Düşük / Orta / Yüksek)]
+       ├──► [Mekanik vs. Oyun Bilgisi Darboğaz Ayrımı]
+       └──► [Haftalık 'Öncelikli Aksiyon Raporu' + Veto Önerisi]`,
+      techStack: [
+        "Next.js & TypeScript",
+        "Özel Analiz Motoru (Rule-Based Expert System)",
+        "Tailwind CSS & Charting"
+      ],
+      highlights: [
+        "Karar Verdiren Metrikler: Pistol dönüşümü, retake verimi ve takım okunabilirlik skoru.",
+        "Yerel Veri Güvenliği: `baslat.bat` ile tek tıkla ağdaki takım arkadaşlarıyla yerel paylaşım."
+      ]
+    }
+  },
+  {
+    id: "mydevpage",
+    name: "Ceky Engineering Portfolio",
+    title: "Next.js & React Three Fiber Mühendislik Portfolyosu",
+    category: ["fullstack"],
+    isPrivate: true,
+    language: "TypeScript",
+    tags: ["Next.js", "React Three Fiber", "Three.js", "GSAP ScrollTrigger", "Vitest"],
+    description: "DOM içeriği ile WebGL katmanını hibrit birleştiren, GSAP ve R3F destekli sinematik geliştirici portfolyosu.",
+    githubUrl: null,
+    caseStudy: {
+      tagline: "WebGL / Three.js ve DOM Hibrit Görselleştirme Mimarisi",
+      problem: "Standart 3D web siteleri aşırı GPU ve bellek tüketerek düşük donanımlı cihazlarda çökmeye yol açıyordu.",
+      solution: "DOM içeriğini ana taşıyıcı tutan, tek bir kalıcı WebGL canvas katmanı ile procedural 3D arka plan sağlayan ve Vitest ile test edilen hafif Next.js mimarisi.",
+      flow: `[DOM İçerik Katmanı (SEO & Erişilebilirlik)]
+       │ (Senkron Scroll Eventleri)
+       ▼
+[GSAP ScrollTrigger] ──► [React Three Fiber (R3F) Canvas]
+       │
+[Tekil Persistent WebGL Shader Pipeline]`,
+      techStack: ["Next.js 15", "React Three Fiber", "Three.js", "GSAP", "Vitest"],
+      highlights: [
+        "Düşük Donanım Uyumu: WebGL desteği olmayan tarayıcılarda sorunsuz statik çalışma.",
+        "Sıfır Bellek Sızıntısı: Komponent unmount anında GPU dokularının otomatik temizliği."
+      ]
+    }
+  },
+  {
+    id: "appointment-booking",
+    name: "RandevuGO Platformu",
+    title: "Harita Destekli Çevrimiçi Randevu & Rezervasyon SaaS",
+    category: ["fullstack", "backend"],
+    isPrivate: false,
+    language: "TypeScript",
+    tags: ["TypeScript", "OpenStreetMap / Leaflet", "Docker", "Multi-booking", "REST API"],
+    description: "Müşterilerin harita üzerinden işletmeleri keşfedip randevu alabildiği, çalışan/hizmet/fiyat yönetimi sağlayan tam dockerize rezervasyon platformu.",
+    githubUrl: "https://github.com/cekYc/appointment_booking_website",
+    caseStudy: null
+  },
+  {
+    id: "repo-monitor-2",
+    name: "Repo Monitor",
+    title: "GitHub Geliştirici DNA & Dil Analiz Arayüzü",
+    category: ["fullstack"],
+    isPrivate: false,
+    language: "TypeScript",
+    tags: ["TypeScript", "GitHub API", "Data Visualization", "Profile Radar"],
+    description: "Herhangi bir GitHub profilinin açık depolarını tarayarak geliştiricinin programlama dili DNA'sını ve aktivite eğrisini görselleştiren araç.",
+    githubUrl: "https://github.com/cekYc/repo-monitor-2",
+    caseStudy: null
+  },
+
+  // --- 3. SYSTEMS DEVELOPER ---
   {
     id: "deadly-sins-engine",
     name: "Project M // Voxel Engine",
@@ -187,7 +270,7 @@ const projectsData = [
     language: "Rust",
     tags: ["Rust", "Vulkan API", "Rayon Async Meshing", "GPU Memory Management", "Voxel Engine"],
     description: "Rust ve Vulkan API kullanılarak sıfırdan geliştirilen; özel bellek yöneticileri, termodinamik/otomasyon simülasyonu ve asenkron chunk örme yeteneğine sahip voxel motoru.",
-    githubUrl: "https://github.com/cekYc/deadly_sins_engine",
+    githubUrl: null,
     caseStudy: {
       tagline: "Vulkan API & Rust İle Sıfırdan Yüksek Performanslı Sistem Mühendisliği",
       problem: "Standart oyun motorları (Unity/Unreal) devasa voxel dünyalarında ve karmaşık termodinamik otomasyon hesaplamalarında bellek darboğazı yaşatıyordu.",
@@ -222,7 +305,7 @@ const projectsData = [
     language: "Rust",
     tags: ["Rust", "Compiler Design", "AST", "HIR / MIR", "C11 CodeGen", "Self-Hosting Plan"],
     description: "Kaynak koddan doğrudan optimize C11 çıktısı ve yerel ikili dosya üreten; Tokenizer, AST, Name Resolution, Typed HIR ve CFG MIR aşamalarını içeren derleyici.",
-    githubUrl: "https://github.com/cekYc/ceky-lang",
+    githubUrl: null,
     caseStudy: {
       tagline: "Modern Derleyici Mimarisi: Source -> AST -> HIR -> MIR -> C11",
       problem: "Tip güvenliğini korurken C performansı sunan ve kendi kendini derleyebilecek (self-hosting) hafif bir sistem dili geliştirme hedefi.",
@@ -253,7 +336,6 @@ const projectsData = [
     category: ["systems"],
     isPrivate: false,
     language: "Rust",
-    stars: 0,
     tags: ["Rust", "Systems Language", "Package Manager", "Compiler", "v0.6.5"],
     description: "Güvenmediği kodu derlemeyi reddeden ('Refuses to compile code it doesn't trust'), dahili paket yöneticisi ve registry entegrasyonuna sahip sistem programlama dili.",
     githubUrl: "https://github.com/cekYc/zet-lang-source",
@@ -266,7 +348,6 @@ const projectsData = [
     category: ["systems"],
     isPrivate: false,
     language: "C",
-    stars: 0,
     tags: ["C (C11)", "Low-Level Runtime", "Custom Bytecode", "v8.0.0"],
     description: "Sıfırdan saf C dilinde baştan tasarlanan; bellek yönetimi, fonksiyon çalışma zamanı ve parser'ı C ile yazılmış bağımsız dil mimarisi.",
     githubUrl: "https://github.com/cekYc/renewed-gojo-lang",
@@ -285,79 +366,7 @@ const projectsData = [
     caseStudy: null
   },
 
-  // --- FULL-STACK DEVELOPER ---
-  {
-    id: "valorant-premier",
-    name: "Premier Lab",
-    title: "Espor Karar Verdiren Zayıflık Teşhis & Scouting Motoru",
-    category: ["fullstack"],
-    isPrivate: true,
-    language: "TypeScript",
-    tags: ["Next.js", "Weakness Diagnostic Engine", "Scouting", "VOD Tagging", "Data Analytics"],
-    description: "Basit istatistikler yerine takıma 'bu hafta ne antrenmanı yapmalıyız?' kararını veren ~15 kurallı teşhis motoruna ve VOD etiketleme sistemine sahip analiz platformu.",
-    githubUrl: "https://github.com/cekYc/valorant-premier",
-    caseStudy: {
-      tagline: "Kural Tabanlı Zayıflık Teşhis Motoru ve Scouting Platformu",
-      problem: "Mevcut espor analiz araçları yalnızca sayıları listeler, oyunculara ve koçlara somut antrenman kararı üretemez.",
-      solution: "Küçük örneklemlerde yanılmayan (`sample size >= 6` kuralı), oyuncuların Mekanik ↔ Oyun Bilgisi ayrımını çıkaran ve otomatik VOD anı etiketleyen bir teşhis algoritması kodlandı.",
-      flow: `[Maç Verisi & VOD Etiketleri]
-       │
-       ▼
-[Zayıflık Teşhis Motoru (lib/analysis/weaknesses.ts)]
-       ├──► [Örneklem Güveni Kontrolü (Düşük / Orta / Yüksek)]
-       ├──► [Mekanik vs. Oyun Bilgisi Darboğaz Ayrımı]
-       └──► [Haftalık 'Öncelikli Aksiyon Raporu' + Veto Önerisi]`,
-      techStack: [
-        "Next.js & TypeScript",
-        "Özel Analiz Motoru (Rule-Based Expert System)",
-        "Tailwind CSS & Charting"
-      ],
-      highlights: [
-        "Karar Verdiren Metrikler: Pistol dönüşümü, retake verimi ve takım okunabilirlik skoru.",
-        "Yerel Veri Güvenliği: `baslat.bat` ile tek tıkla ağdaki takım arkadaşlarıyla yerel paylaşım."
-      ]
-    }
-  },
-  {
-    id: "mydevpage",
-    name: "Ceky Portfolio & Three.js Canvas",
-    title: "Next.js & React Three Fiber Mühendislik Portfolyosu",
-    category: ["fullstack"],
-    isPrivate: true,
-    language: "TypeScript",
-    tags: ["Next.js", "React Three Fiber", "Three.js", "GSAP ScrollTrigger", "Vitest"],
-    description: "DOM içeriği ile WebGL katmanını hibrit birleştiren, GSAP ve R3F destekli sinematik geliştirici portfolyosu.",
-    githubUrl: "https://github.com/cekYc/mydevpage",
-    caseStudy: null
-  },
-  {
-    id: "appointment-booking",
-    name: "RandevuGO Platformu",
-    title: "Harita Destekli Çevrimiçi Randevu & Rezervasyon SaaS",
-    category: ["fullstack", "backend"],
-    isPrivate: false,
-    language: "TypeScript",
-    stars: 0,
-    tags: ["TypeScript", "OpenStreetMap / Leaflet", "Docker", "Multi-booking", "REST API"],
-    description: "Müşterilerin harita üzerinden işletmeleri keşfedip randevu alabildiği, çalışan/hizmet/fiyat yönetimi sağlayan tam dockerize rezervasyon platformu.",
-    githubUrl: "https://github.com/cekYc/appointment_booking_website",
-    caseStudy: null
-  },
-  {
-    id: "repo-monitor-2",
-    name: "Repo Monitor",
-    title: "GitHub Geliştirici DNA & Dil Analiz Arayüzü",
-    category: ["fullstack"],
-    isPrivate: false,
-    language: "TypeScript",
-    stars: 0,
-    tags: ["TypeScript", "GitHub API", "Data Visualization", "Profile Radar"],
-    description: "Herhangi bir GitHub profilinin açık depolarını tarayarak geliştiricinin programlama dili DNA'sını ve aktivite eğrisini görselleştiren araç.",
-    githubUrl: "https://github.com/cekYc/repo-monitor-2",
-    caseStudy: null
-  },
-
-  // --- BİLGİ İŞLEM / IT & ALTYAPI ---
+  // --- 4. BİLGİ İŞLEM / IT & ALTYAPI ---
   {
     id: "aiops-radar",
     name: "AIOps System Radar // v5.0",
@@ -365,7 +374,6 @@ const projectsData = [
     category: ["it", "systems"],
     isPrivate: false,
     language: "Python",
-    stars: 0,
     tags: ["Python", "System Monitor", "VRAM Cleaner", "Ping Optimizer", "UAC Integration", "v5.0"],
     description: "Windows ortamında CPU, RAM ve VRAM darboğazlarını temizleyen, ağ ping paketlerini optimize eden ve UAC yetki entegrasyonuna sahip sistem radarı.",
     githubUrl: "https://github.com/cekYc/real_time_iot_dashboard",
@@ -394,7 +402,6 @@ const projectsData = [
     category: ["it", "systems"],
     isPrivate: false,
     language: "Python",
-    stars: 0,
     tags: ["Python", "Wi-Fi Sensing", "RF Analysis", "Network Diagnostics"],
     description: "Windows bilgisayar ve modem Wi-Fi ölçümlerinden yararlanarak ortamdaki RF sinyal kalitesini, kanal çakışmalarını ve kapsama haritasını çıkaran ağ aracı.",
     githubUrl: "https://github.com/cekYc/wifi-map",
@@ -407,7 +414,6 @@ const projectsData = [
     category: ["it", "systems"],
     isPrivate: false,
     language: "Kotlin",
-    stars: 0,
     tags: ["Kotlin", "Android", "Offline STT", "Privacy-First", "Edge AI"],
     description: "WhatsApp sesli mesajlarını sunucuya göndermeden, tamamen cihaz üzerinde çevrimdışı Türkçe metne dönüştüren gizlilik odaklı Android uygulaması.",
     githubUrl: "https://github.com/cekYc/whatsapp-transcript",
@@ -420,7 +426,6 @@ const projectsData = [
     category: ["it"],
     isPrivate: false,
     language: "Kotlin",
-    stars: 0,
     tags: ["Kotlin", "Android", "Offline-First", "Industrial UX", "SQLite"],
     description: "İnternet erişimi olmayan fabrika ve üretim sahalarında vardiya performansı ve ürün adetlerini hızlıca kaydeden çevrimdışı Android aracı.",
     githubUrl: "https://github.com/cekYc/work-follower",
@@ -435,151 +440,64 @@ const projectsData = [
     language: "Python",
     tags: ["Python", "Pydantic", "Tool Calling", "Sandboxed CLI", "Completion Verifier"],
     description: "Yerel LLM sunucularıyla çalışan; dosya okuma/yazma, terminal komutu çalıştırma ve hash doğrulamalı `TaskState` döngüsüne sahip otonom ajan (v0.0.2).",
-    githubUrl: "https://github.com/cekYc/Ceky-AI",
-    caseStudy: null
+    githubUrl: null,
+    caseStudy: {
+      tagline: "Yerel LLM Modelleri İçin Güvenli Sandbox Ajan Yürütme Mimarisi",
+      problem: "LLM ajanlarının sisteme kontrolsüz komut vermesi veya çalışma alanı dışına çıkması güvenlik riski oluşturuyordu.",
+      solution: "Pydantic ile tip denetimli standart `ToolResult` sözleşmesi, hash doğrulamalı dosya yazma kontrolü ve çalışma alanı sınır kısıtı getirildi.",
+      flow: `[Kullanıcı Hedefi / TaskState]
+       │
+       ▼
+[Ajan Döngüsü (Maksimum 16 Adım)]
+       ├──► [Pydantic Şema Validasyonu (Hatalı Tipleri Reddetme)]
+       ├──► [Sandbox Terminal Komut Yürütücü]
+       └──► [Hash Doğrulamalı Completion Verifier]`,
+      techStack: ["Python 3.12", "Pydantic", "Local LLM Tool Protocol", "TaskState Engine"],
+      highlights: [
+        "Sıkı Hata Sınıfları: INVALID_ARGUMENT, TIMEOUT, PROCESS_FAILED.",
+        "Hash Doğrulama: Yazılan kodun gerçekten çalıştığını kanıtlayan verification katmanı."
+      ]
+    }
   }
 ];
 
-// --- 2. Department Pitches Data ---
-const departmentPitches = {
-  backend: {
-    pillBadge: "⚙️ Backend Developer Akışı",
-    streamTitle: "Backend & Dağıtık Sistemler Mühendisliği",
-    title: "⚙️ Backend Developer Yetkinlik & Mimari Özeti",
-    tagline: "Yüksek hacimli eşzamanlılık (Go/Rust), transaction güvenliği (Postgres/ACID) ve kurumsal mikroservisler.",
-    body: "Go (pgx/v5), NestJS ve Python ile yüksek trafikli, veri tutarlılığı yüksek (ACID) ve hataya dayanıklı mikroservisler geliştiriyorum. PostgreSQL Row-Level Security (RLS) politikaları, Redis Streams ile asenkron olay kuyrukları ve Docker tabanlı izole sandbox mimarilerinde derin uzmanlığa sahibim.",
-    highlights: [
-      { title: "Veri Tutarlılığı & ACID", desc: "PostgreSQL pgx havuzu ve transaction-safe lead/order dağıtımı." },
-      { title: "Gerçek Zamanlı Kuyruklar", desc: "Redis Streams, WebSockets ve Goroutine tabanlı asenkron yapılar." },
-      { title: "Güvenlik & İzolasyon", desc: "JWT, OAuth2, Bcrypt, RLS ve Docker izole yürütme ortamları." }
-    ],
-    featuredProjectIds: ["elocode", "crm-lead", "merchant-order", "cekypets"]
-  },
-  fullstack: {
-    pillBadge: "🌐 Full-Stack Developer Akışı",
-    streamTitle: "Full-Stack Web & Bulut Uygulama Geliştirme",
-    title: "🌐 Full-Stack Developer Yetkinlik & Mimari Özeti",
-    tagline: "Modern uçtan uca mimariler, reaktif SPA/SSR arayüzleri ve sunucusuz (Serverless) bulut dağıtımı.",
-    body: "Next.js (App Router), Angular 17+ (Standalone Components), React ve Tailwind CSS ile piksel hassasiyetinde, modern ve erişilebilir arayüzler üretiyorum. Arka planda Cloudflare Workers (OpenNext), Supabase ve NestJS ile sıfır gecikmeli API entegrasyonu ve Three.js/WebGL ile 3D katmanlar oluşturuyorum.",
-    highlights: [
-      { title: "Modern SSR & SPA", desc: "Next.js App Router, Angular 17 Standalone, React Vite ekosistemi." },
-      { title: "Cloudflare & Edge", desc: "OpenNext ile Cloudflare Workers üzerinde sıfır sunucu maliyetli SaaS." },
-      { title: "Gelişmiş Veri & 3D UI", desc: "Three.js, React Three Fiber ve karar destek analitiği panelleri." }
-    ],
-    featuredProjectIds: ["crm-lead", "valorant-premier", "cekypets", "appointment-booking"]
-  },
-  systems: {
-    pillBadge: "🦀 Systems Developer Akışı",
-    streamTitle: "Sistem Programlama, Derleyiciler & Donanım Katmanı",
-    title: "🦀 Systems & Low-Level Yetkinlik & Mimari Özeti",
-    tagline: "Doğrudan donanım kontrolü, derleyici mimarisi, GPU grafik motorları ve P2P ağ protokolleri.",
-    body: "Rust ve C (C11) dillerinde sıfır maliyetli soyutlamalar, özel bellek yöneticileri (custom allocators) ve çok çekirdekli asenkron mimariler (Rayon) ile çalışıyorum. Vulkan API ile sıfırdan Voxel motoru, AST -> HIR -> MIR -> C11 derleyici hatları ve dağıtık P2P canlı yayın mesh protokolleri inşa ettim.",
-    highlights: [
-      { title: "Grafik & Vulkan API", desc: "Özel GPU bellek havuzları, frustum culling ve voxel greedy meshing." },
-      { title: "Derleyici (Compiler) Pipeline", desc: "Tokens, AST, Typed HIR, CFG MIR ve taşınabilir C11 code generator." },
-      { title: "Dağıtık P2P & Mesh", desc: "Kendi kendini onaran video ingest ve düşük gecikmeli P2P aktarımı." }
-    ],
-    featuredProjectIds: ["deadly-sins-engine", "ceky-lang", "elocode", "zet-lang-source"]
-  },
-  it: {
-    pillBadge: "🖥️ Bilgi İşlem / IT & Altyapı Akışı",
-    streamTitle: "IT Altyapı, Sistem Teşhisi & Saha Operasyonları",
-    title: "🖥️ Bilgi İşlem / IT & Altyapı Yetkinlik Özeti",
-    tagline: "Sistem teşhisi, donanım optimizasyonu, RF/Wi-Fi algılama ve %100 çevrimdışı saha operasyonları.",
-    body: "Bilgi işlem altyapısı, ağ optimizasyonu, donanım radarları ve fabrika/saha operasyonları için çözümler üretiyorum. Windows API ve UAC entegrasyonu ile CPU/VRAM/Ping otopilotu (AIOps Radar v5.0), modem RF sinyal haritalama ve uçta (edge) internet olmadan çalışan çevrimdışı Android/SQLite araçları geliştirdim.",
-    highlights: [
-      { title: "AIOps & Sistem Teşhisi", desc: "Win32 API/UAC ile VRAM temizleyici, ping düşürücü ve donanım radarı." },
-      { title: "Saha & Ağ Analizi", desc: "RF/Wi-Fi kapsama alanı analitiği ve Docker servis orkestrasyonu." },
-      { title: "Çevrimdışı (Edge) Araçlar", desc: "Sıfır internet bağımlılığıyla çalışan Kotlin STT ve fabrika takip sistemleri." }
-    ],
-    featuredProjectIds: ["aiops-radar", "wifi-map", "whatsapp-transcript", "work-follower"]
-  }
-};
-
-// --- 3. State Management ---
-let currentRole = "backend";
-let currentFilter = "all"; // 'all', 'private', 'public'
-let currentSearch = "";
-
-// --- 4. DOM Initialization & Event Listeners ---
+// --- 2. Initialize Page & Render All Department Grids Simultaneously ---
 document.addEventListener("DOMContentLoaded", () => {
-  renderEntireDepartmentStream(currentRole);
-  setupFilterPills();
-  setupSearchInput();
+  renderDepartmentProjects("backend", "backend-projects-grid");
+  renderDepartmentProjects("fullstack", "fullstack-projects-grid");
+  renderDepartmentProjects("systems", "systems-projects-grid");
+  renderDepartmentProjects("it", "it-projects-grid");
+
   setupModalEvents();
   setupPrintCV();
 });
 
-// Master function: Sets role, updates all components, and smoothly scrolls to showcase stream
-function setRoleAndScroll(roleKey) {
-  if (!departmentPitches[roleKey]) return;
-  currentRole = roleKey;
+// Render helper for each individual department
+function renderDepartmentProjects(category, containerId) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
 
-  // 1. Update UI Selector Cards
-  document.querySelectorAll(".role-card").forEach(card => {
-    card.classList.toggle("active", card.getAttribute("data-role") === roleKey);
-  });
+  const projects = projectsData.filter(p => p.category.includes(category));
 
-  // 2. Render all parts of the unified stream
-  renderEntireDepartmentStream(roleKey);
-
-  // 3. Smooth Scroll directly to the top of the Showcase Stream
-  const showcaseSection = document.getElementById("showcase");
-  if (showcaseSection) {
-    showcaseSection.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
-}
-
-// Render all parts of the unified stream synchronously
-function renderEntireDepartmentStream(roleKey) {
-  const data = departmentPitches[roleKey];
-  if (!data) return;
-
-  // A. Update stream header badges and title
-  const pillEl = document.getElementById("stream-role-title-badge");
-  const mainTitleEl = document.getElementById("stream-main-title");
-  if (pillEl) pillEl.textContent = data.pillBadge;
-  if (mainTitleEl) mainTitleEl.textContent = data.streamTitle;
-
-  // B. Render Department Competency Card (Yetkinlik Kartı)
-  const summaryContainer = document.getElementById("dept-summary-container");
-  if (summaryContainer) {
-    summaryContainer.innerHTML = `
-      <div class="dept-pitch-header">
-        <div class="dept-pitch-title">
-          <span>${data.title}</span>
-        </div>
-        <div class="role-badge">${data.tagline}</div>
+  container.innerHTML = projects.map(p => `
+    <div class="project-card">
+      <div class="card-top-row">
+        ${p.isPrivate ? 
+          `<span class="project-badge-private">🔒 Özel Mimari (Case Study)</span>` : 
+          `<span class="project-badge-public">🌐 Açık Kaynak</span>`
+        }
+        <span class="project-lang-tag">${p.language}</span>
       </div>
-      <p class="dept-pitch-body">${data.body}</p>
-      <div class="dept-highlights">
-        ${data.highlights.map(h => `
-          <div class="highlight-item">
-            <div class="highlight-title">✦ ${h.title}</div>
-            <div class="highlight-desc">${h.desc}</div>
-          </div>
-        `).join("")}
+
+      <h4 class="project-title">${p.name}</h4>
+      <p class="project-desc">${p.description}</p>
+
+      <div class="project-tech-tags">
+        ${p.tags.slice(0, 4).map(t => `<span class="tech-tag">${t}</span>`).join("")}
+        ${p.tags.length > 4 ? `<span class="tech-tag">+${p.tags.length - 4}</span>` : ""}
       </div>
-    `;
-  }
 
-  // C. Render Featured Case Studies for this Department
-  const featuredGrid = document.getElementById("dept-featured-grid");
-  if (featuredGrid) {
-    const featuredProjects = data.featuredProjectIds
-      .map(id => projectsData.find(p => p.id === id))
-      .filter(Boolean);
-
-    featuredGrid.innerHTML = featuredProjects.map(p => `
-      <div class="featured-card">
-        <div class="featured-card-badge">
-          ${p.isPrivate ? "🔒 Özel Mimari (Case Study)" : "🌐 Açık Kaynak Mimari"} · ${p.language}
-        </div>
-        <h4 class="featured-title">${p.name} — ${p.title}</h4>
-        <p class="featured-desc">${p.description}</p>
-        <div class="featured-tags">
-          ${p.tags.slice(0, 4).map(t => `<span class="tech-tag">${t}</span>`).join("")}
-        </div>
+      <div class="project-actions">
         ${p.caseStudy ? `
           <button class="btn btn-cyan btn-sm" onclick="openCaseStudyModal('${p.id}')">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
@@ -592,119 +510,11 @@ function renderEntireDepartmentStream(roleKey) {
           </a>
         `}
       </div>
-    `).join("");
-  }
-
-  // D. Render Full Projects Grid
-  renderProjects();
-}
-
-function setupFilterPills() {
-  document.querySelectorAll(".filter-pill").forEach(pill => {
-    pill.addEventListener("click", () => {
-      document.querySelectorAll(".filter-pill").forEach(p => p.classList.remove("active"));
-      pill.classList.add("active");
-      currentFilter = pill.getAttribute("data-filter");
-      renderProjects();
-    });
-  });
-}
-
-function setupSearchInput() {
-  const searchInput = document.getElementById("project-search");
-  if (searchInput) {
-    searchInput.addEventListener("input", (e) => {
-      currentSearch = e.target.value.toLowerCase().trim();
-      renderProjects();
-    });
-  }
-}
-
-// Render projects filtered by role, search and public/private
-function renderProjects() {
-  const grid = document.getElementById("projects-grid");
-  const countDesc = document.getElementById("projects-count-desc");
-  if (!grid) return;
-
-  let filtered = projectsData.filter(p => p.category.includes(currentRole));
-
-  // Filter by private / public
-  if (currentFilter === "private") {
-    filtered = filtered.filter(p => p.isPrivate);
-  } else if (currentFilter === "public") {
-    filtered = filtered.filter(p => !p.isPrivate);
-  }
-
-  // Filter by search text
-  if (currentSearch) {
-    filtered = filtered.filter(p => 
-      p.name.toLowerCase().includes(currentSearch) ||
-      p.title.toLowerCase().includes(currentSearch) ||
-      p.description.toLowerCase().includes(currentSearch) ||
-      p.tags.some(t => t.toLowerCase().includes(currentSearch)) ||
-      p.language.toLowerCase().includes(currentSearch)
-    );
-  }
-
-  if (countDesc) {
-    countDesc.textContent = `${filtered.length} proje listeleniyor (${currentRole.toUpperCase()} odaklı)`;
-  }
-
-  if (filtered.length === 0) {
-    grid.innerHTML = `
-      <div style="grid-column: 1 / -1; text-align: center; padding: 40px; color: var(--text-muted);">
-        <p style="font-size: 1.1rem; margin-bottom: 8px;">Arama kriterlerine uygun proje bulunamadı.</p>
-        <button class="btn btn-outline btn-sm" onclick="resetFilters()">Filtreleri Sıfırla</button>
-      </div>
-    `;
-    return;
-  }
-
-  grid.innerHTML = filtered.map(p => `
-    <div class="project-card">
-      <div class="card-top-row">
-        ${p.isPrivate ? 
-          `<span class="project-badge-private">🔒 Özel Mimari</span>` : 
-          `<span class="project-badge-public">🌐 Açık Kaynak</span>`
-        }
-        <span class="project-lang-tag">${p.language}</span>
-      </div>
-
-      <h3 class="project-title">${p.name}</h3>
-      <p class="project-desc">${p.description}</p>
-
-      <div class="project-tech-tags">
-        ${p.tags.slice(0, 4).map(t => `<span class="tech-tag">${t}</span>`).join("")}
-        ${p.tags.length > 4 ? `<span class="tech-tag">+${p.tags.length - 4}</span>` : ""}
-      </div>
-
-      <div class="project-actions">
-        ${p.caseStudy ? `
-          <button class="btn btn-cyan btn-sm" onclick="openCaseStudyModal('${p.id}')">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-            Mimari İncele (Case Study)
-          </button>
-        ` : `
-          <a href="${p.githubUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-            GitHub Deposu
-          </a>
-        `}
-      </div>
     </div>
   `).join("");
 }
 
-function resetFilters() {
-  currentFilter = "all";
-  currentSearch = "";
-  const searchInput = document.getElementById("project-search");
-  if (searchInput) searchInput.value = "";
-  document.querySelectorAll(".filter-pill").forEach((p, idx) => p.classList.toggle("active", idx === 0));
-  renderProjects();
-}
-
-// --- 5. Case Study Modal Engine ---
+// --- 3. Case Study Modal Engine ---
 function openCaseStudyModal(projectId) {
   const project = projectsData.find(p => p.id === projectId);
   if (!project || !project.caseStudy) return;
@@ -716,10 +526,7 @@ function openCaseStudyModal(projectId) {
   const cs = project.caseStudy;
   body.innerHTML = `
     <div class="modal-header-badge">
-      ${project.isPrivate ? 
-        `<span class="project-badge-private">🔒 Özel (Private) Mimari Analizi</span>` : 
-        `<span class="project-badge-public">🌐 Açık Kaynak</span>`
-      }
+      <span class="project-badge-private">🔒 Özel Mimari / Ticari Kod Tabanı</span>
       <span class="project-lang-tag">• ${project.language}</span>
     </div>
 
@@ -793,13 +600,13 @@ function setupModalEvents() {
   });
 }
 
-// --- 6. Print CV Engine ---
+// --- 4. Print CV Engine ---
 function setupPrintCV() {
   const btn = document.getElementById("print-cv-btn");
   if (btn) {
     btn.addEventListener("click", () => {
       const origTitle = document.title;
-      document.title = `Eray (cekYc) - ${departmentPitches[currentRole].streamTitle} - CV`;
+      document.title = "Eray (cekYc) - Multi-Department Engineering CV";
       window.print();
       document.title = origTitle;
     });
